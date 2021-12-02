@@ -591,13 +591,17 @@ a[x-apple-data-detectors] {
     transition: all 0.7s ease 0s;
     -webkit-transform: translate(-100%, 0px);
             transform: translate(-100%, 0px);
+
   }
+
   .header__menu._active::before {
     background-color: #ffde7a;
     position: fixed;
     z-index: 10000;
   }
+
   .header__menu._active {
+
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
   }
