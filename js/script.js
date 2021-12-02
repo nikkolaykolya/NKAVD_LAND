@@ -1,3 +1,4 @@
+screen.lockOrientation('portrait');
 
 VANTA.NET({
 	el: "#Visual",
