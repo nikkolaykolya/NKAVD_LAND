@@ -118,7 +118,9 @@ h6 {
 a {
   all: unset;
 }
-
+button{
+  color: inherit !important;
+}
 a[x-apple-data-detectors] {
   color: inherit !important;
   text-decoration: none !important;
