@@ -15,6 +15,7 @@ VANTA.NET({
 	maxDistance: 22.00,
 	spacing: 20.00
 })
+
 const isMobile = {
 	Android: function () {
 		return navigator.userAgent.match(/Android/i);
@@ -133,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	async function formSend(e) {
 		e.preventDefault();
-
 		let error = formValidate(form);
 	}
 
