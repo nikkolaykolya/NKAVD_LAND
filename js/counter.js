@@ -1,9 +1,6 @@
 var count = document.getElementById('counter');
 const btn = document.getElementById('form');
 
-
-
-
 function getRandomValueBetween(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -11,7 +8,7 @@ function getRandomValueBetween(min, max) {
   return numb;
 }
 
-Date.prototype.getWeek = function() {
+Date.prototype.getWeek = function () {
   var target = new Date(this.valueOf());
   var dayNr = (this.getDay() + 6) % 7;
   target.setDate(target.getDate() - dayNr + 3);
@@ -24,7 +21,6 @@ Date.prototype.getWeek = function() {
 }
 
 var d = new Date();
-
 
 var map = {
   0: 20,
