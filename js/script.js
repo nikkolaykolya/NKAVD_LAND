@@ -61,35 +61,28 @@ if (burgerMenu) {
 	});
 }
 
-
-
 //Переворот
 var header = document.getElementById("advantageContainer");
 var btns = document.getElementsByClassName("advantage__box");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    for (var j = 0; j < btns.length; j++) {
-			if (this != btns[j]) {
+
+function anyCardFlipped() {
+	for (var j = 0; j < btns.length; j++)
+		if (btns[j].dataset.active == "active")
+			return true;
+	return false;
+}
+
+window.addEventListener('click', function (event) {
+	if (anyCardFlipped()) {
+		for (var j = 0; j < btns.length; j++)
+			if (event.target != btns[j])
 				btns[j].dataset.active = "inactive";
-			}
-    }
-    if (this.dataset.active == "active") {
-      this.dataset.active = "inactive";
-    }
-		 else {
-      this.dataset.active = "active";
-    }
-  })
-};
-
-var empty = document.getElementById("empty");
-
-empty.addEventListener(`click`, function () {
-	for (var j = 0; j < btns.length; j++) {
-			btns[j].dataset.active = "inactive";
-
 	}
-})
+	if ($(event.target).hasClass('advantage__box')) {
+		event.target.dataset.active = event.target.dataset.active == "active" ? "inactive" : "active";
+	}
+
+});
 
 
 // Инициализируем Swiper
