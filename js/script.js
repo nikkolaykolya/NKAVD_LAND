@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (error == 0) {
 			console.log(formMap);
 			formResult.style.display = "block";
-			if (nowHour > 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
+			if (nowHour < 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
 				formResultText.innerHTML = "Наше рабочее время Пн - Пт с 9:00 до 18:00";
 			} else {
 				formResultText.innerHTML = "Наш менеджер свяжется с вами в течении 15-ти минут!";
