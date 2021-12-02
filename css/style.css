@@ -368,6 +368,7 @@ a[x-apple-data-detectors] {
     top: 0%;
     left: 0%;
   }
+
   #button:hover #circle {
     width: 290%;
     height: 600%;
@@ -998,6 +999,11 @@ a[x-apple-data-detectors] {
   font-weight: 700;
   margin: 0 auto;
   margin-top: 95px;
+}
+
+
+.block__button_mobile-text, .block__button_desktop-text{
+  color:#000000 !important;
 }
 
 @media (max-width: 768px) {
