@@ -119,7 +119,7 @@ a {
   all: unset;
 }
 button{
-  color: inherit !important;
+  color: #000000 !important;
 }
 a[x-apple-data-detectors] {
   color: inherit !important;
