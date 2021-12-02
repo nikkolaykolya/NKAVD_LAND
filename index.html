@@ -1,8 +1,5 @@
-<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
 <!DOCTYPE html>
-<!-- Оболочка документа, указываем язык содержимого -->
 <html lang="ru">
-<!-- Заголовок страницы, контейнер для другтх важных данных (не отображается) -->
 
 <head>
 	<!-- заголовок страницы в браузере -->
@@ -1048,7 +1045,6 @@
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/counter.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script>
 		ScrollReveal().reveal('.block2', {
@@ -1073,7 +1069,10 @@
 			delay: 150
 		});
 	</script>
-	<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+	<script type="text/javascript" src="js/relax.js"></script>
+	<script type="text/javascript" src="js/simpleParallax.js"></script>
+
+
 	<script>
 		var rellax = new Rellax('.figure_first');
 		var rellax = new Rellax('.figure_second');
@@ -1081,12 +1080,13 @@
 		var rellax = new Rellax('.figure_fourth');
 		var rellax = new Rellax('.figure_fifth');
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
+
 	<script>
-		$('.circle-loader').toggleClass('load-complete');
-		$('.checkmark').toggle();
+		var circles = document.getElementsByClassName("circle-loader");
+		var checkmark = document.getElementsByClassName("checkmark");
+		for (var j = 0; j < circles.length; j++)
+			circles[j].classList.toggle("load-complete");
+		checkmark[0].classList.toggle('checkmarkActive');
 	</script>
 </body>
 

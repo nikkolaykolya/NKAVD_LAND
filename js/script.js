@@ -1,4 +1,3 @@
-"use strict"
 
 VANTA.NET({
 	el: "#Visual",
@@ -14,33 +13,19 @@ VANTA.NET({
 	points: 6.00,
 	maxDistance: 22.00,
 	spacing: 20.00
-})
+});
 
-const isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i);
-	},
-	BlackBerry: function () {
-		return navigator.userAgent.match(/BleakBerry/i);
-	},
-	iOS: function () {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-	},
-	Opera: function () {
-		return navigator.userAgent.match(/Opera Mini/i);
-	},
-	Window: function () {
-		return navigator.userAgent.match(/IEMobile/i);
-	},
-	any: function () {
-		return (
-			isMobile.Android() ||
-			isMobile.BlackBerry() ||
-			isMobile.iOS() ||
-			isMobile.Opera() ||
-			isMobile.Window());
+function detectMobile() {
+	var match = window.matchMedia || window.msMatchMedia;
+	if (match) {
+		var mq = match("(pointer:coarse)");
+		return mq.matches;
 	}
-};
+	return false;
+}
+
+var isMobile = detectMobile();
+
 
 //Меню бургер
 const burgerMenu = document.querySelector('.header__burger');
@@ -73,16 +58,15 @@ function anyCardFlipped() {
 	return false;
 }
 
-document.querySelector('body').addEventListener(!isMobile ? 'click' : 'touchstart', function (event) {
+document.querySelector('body').addEventListener(isMobile ? 'touchstart' : 'click', function (event) {
 	if (anyCardFlipped()) {
 		for (var j = 0; j < btns.length; j++)
 			if (event.target != btns[j])
 				btns[j].dataset.active = "inactive";
 	}
-	if ($(event.target).hasClass('advantage__box')) {
+	if (event.target.classList.contains('advantage__box')) {
 		event.target.dataset.active = event.target.dataset.active == "active" ? "inactive" : "active";
 	}
-
 });
 
 

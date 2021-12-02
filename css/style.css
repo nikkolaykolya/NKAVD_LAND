@@ -61,6 +61,11 @@ body {
 
 body {
   height: 100%;
+  touch-action: pan-x pan-y;
+}
+
+.checkmarkActive{
+display: block !important;
 }
 
 input,
