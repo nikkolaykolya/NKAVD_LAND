@@ -73,7 +73,7 @@ function anyCardFlipped() {
 	return false;
 }
 
-window.addEventListener('click', function (event) {
+document.querySelector('body').addEventListener(!isMobile ? 'click' : 'touchstart', function (event) {
 	if (anyCardFlipped()) {
 		for (var j = 0; j < btns.length; j++)
 			if (event.target != btns[j])
