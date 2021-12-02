@@ -17,9 +17,8 @@ function checkOrientationChange() {
 }
 
 // function to request full screen of device browser
-
 function goFullScreen() {
-	var elem = document.querySelector('body');
+	var elem = document.querySelector('html');
 	if (elem.requestFullscreen) {
 		elem.requestFullscreen().then(data => {
 			lockScreenOrientation();
@@ -50,9 +49,9 @@ function goFullScreen() {
 //function to lock the screen. in this case the screen will be locked in portrait-primary mode.
 
 function lockScreenOrientation() {
-	screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+	window.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 
-	if (screen.lockOrientationUniversal("landscape-primary")) {
+	if (window.lockOrientationUniversal("landscape-primary")) {
 		console.log('Orientation was locked');
 	} else {
 		console.log('Orientation lock failed');
