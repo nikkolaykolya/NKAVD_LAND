@@ -383,7 +383,7 @@ body._lock .header__body:before {
     opacity: 1;
   }
 }
-@media (max-width: 754px) {
+@media (max-width: 784px) {
   .block7__wrapper {
     border: 1px solid black;
     -webkit-box-shadow: 0 4px 19px rgba(0, 0, 0, 0.25);
