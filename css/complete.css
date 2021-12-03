@@ -1,0 +1,50 @@
+body {
+  background: #F3F3F3;
+}
+
+.form_result {
+  width: 650px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: Montserrat;
+}
+.form_result p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+.form_result #form_result_text {
+  font-weight: 400;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.left_complete {
+  background: url("../img/bg/complete_left.png");
+  height: 676px;
+  width: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.right_complete {
+  background: url("../img/bg/complete_right.png");
+  height: 586px;
+  width: 554px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.circle-loader {
+  top: -150px;
+}
+
+.checkmarkActive {
+  display: block !important;
+}

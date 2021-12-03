@@ -1,4 +1,63 @@
-"use strict"
+window.addEventListener('orientationchange', checkOrientationChange);
+
+function checkOrientationChange() {
+	let screenOrientation = window.orientation;
+	console.log(screenOrientation);
+	switch (screenOrientation) {
+		case 0: console.log('you are in portrait-primary mode');
+			break;
+		case 90: goFullScreen();
+			break;
+		case 180: goFullScreen();
+			break;
+		case 270: goFullScreen();
+			break;
+		default: console.log('implementation of screen orientation');
+	}
+}
+
+// function to request full screen of device browser
+function goFullScreen() {
+	var elem = document.querySelector('html');
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen().then(data => {
+			lockScreenOrientation();
+		}, err => {
+			console.log('no');
+		});
+	} else if (elem.mozRequestFullScreen) { /* Firefox */
+		elem.mozRequestFullScreen().then(data => {
+			lockScreenOrientation();
+		}, err => {
+			console.log('Full Screen request failed');
+		});
+	} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+		elem.webkitRequestFullscreen().then(data => {
+			lockScreenOrientation();
+		}, err => {
+			console.log('Full Screen request failed');
+		});
+	} else if (elem.msRequestFullscreen) { /* IE/Edge */
+		elem.msRequestFullscreen().then(data => {
+			lockScreenOrientation();
+		}, err => {
+			console.log('Full Screen request failed');
+		});
+	}
+}
+
+//function to lock the screen. in this case the screen will be locked in portrait-primary mode.
+
+function lockScreenOrientation() {
+	window.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+
+	if (window.lockOrientationUniversal("landscape-primary")) {
+		console.log('Orientation was locked');
+	} else {
+		console.log('Orientation lock failed');
+	}
+}
+
 
 VANTA.NET({
 	el: "#Visual",
@@ -14,32 +73,19 @@ VANTA.NET({
 	points: 6.00,
 	maxDistance: 22.00,
 	spacing: 20.00
-})
-const isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i);
-	},
-	BlackBerry: function () {
-		return navigator.userAgent.match(/BleakBerry/i);
-	},
-	iOS: function () {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-	},
-	Opera: function () {
-		return navigator.userAgent.match(/Opera Mini/i);
-	},
-	Window: function () {
-		return navigator.userAgent.match(/IEMobile/i);
-	},
-	any: function () {
-		return (
-			isMobile.Android() ||
-			isMobile.BlackBerry() ||
-			isMobile.iOS() ||
-			isMobile.Opera() ||
-			isMobile.Window());
+});
+
+function detectMobile() {
+	var match = window.matchMedia || window.msMatchMedia;
+	if (match) {
+		var mq = match("(pointer:coarse)");
+		return mq.matches;
 	}
-};
+	return false;
+}
+
+var isMobile = detectMobile();
+
 
 //Меню бургер
 const burgerMenu = document.querySelector('.header__burger');
@@ -72,16 +118,15 @@ function anyCardFlipped() {
 	return false;
 }
 
-window.addEventListener('click', function (event) {
+document.querySelector('body').addEventListener(isMobile ? 'touchstart' : 'click', function (event) {
 	if (anyCardFlipped()) {
 		for (var j = 0; j < btns.length; j++)
 			if (event.target != btns[j])
 				btns[j].dataset.active = "inactive";
 	}
-	if ($(event.target).hasClass('advantage__box')) {
+	if (event.target.classList.contains('advantage__box')) {
 		event.target.dataset.active = event.target.dataset.active == "active" ? "inactive" : "active";
 	}
-
 });
 
 
@@ -118,78 +163,3 @@ for (let smoothLink of smoothLinks) {
 		};
 	});
 };
-
-var now = new Date();
-var nowHour = now.getUTCHours();
-var nowDay = now.getDay();
-const formResult = document.getElementById('form_result');
-const formResultText = document.getElementById('form_result_text');
-const circleLoader = document.getElementById('circleLoader')
-const checkMark = document.getElementById('checkmark')
-
-document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('form');
-	form.addEventListener('submit', formSend);
-
-	async function formSend(e) {
-		e.preventDefault();
-
-		let error = formValidate(form);
-	}
-
-	function formValidate(form) {
-		let error = 0;
-		let formReq = document.querySelectorAll('input');
-		let formMap = {};
-		for (let index = 0; index < formReq.length; index++) {
-			const input = formReq[index];
-			formMap[input.name] = input.value;
-
-			if (!input.classList.contains('_req'))
-				continue;
-
-			formRemoveError(input);
-
-			if (input.classList.contains('_email')) {
-				if (emailIsInvalid(input)) {
-					formAddError(input);
-					error++;
-					console.log("Error email validation");
-
-				}
-			}
-			else {
-				if (input.value === '') {
-					formAddError(input);
-					error++;
-					console.log("Error " + input.name + " validation");
-
-				}
-			}
-		}
-
-		if (error == 0) {
-			console.log(formMap);
-			formResult.style.display = "block";
-			if (nowHour < 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
-				formResultText.innerHTML = "Наше рабочее время Пн - Пт с 9:00 до 18:00";
-			} else {
-				formResultText.innerHTML = "Наш менеджер свяжется с вами в течении 15-ти минут!";
-			}
-		}
-
-	}
-	function formAddError(input) {
-		input.parentElement.classList.add('_error');
-		input.classList.add('_error');
-	}
-	function formRemoveError(input) {
-		input.parentElement.classList.remove('_error');
-		input.classList.remove('_error');
-	}
-	function emailIsInvalid(input) {
-		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-	}
-
-
-});

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/counter.css">
+    <link rel="stylesheet" href="css/complete.css">
+  </head>
+  <body>
+      <form action="https://webref.ru/recipe/2317" target="_blank" class="form_result" id="form_result">
+        <div class="circle-loader" id="circleLoader">
+          <div class="checkmark draw" id="checkmark"></div>
+        </div>
+        <p>Спасибо! Ваша заявка принята.</p>
+        <p id="form_result_text"></p>
+        <button class="block__button" id="button">
+          <div class="block__button_desktop-text">
+            <div id="circle"></div>
+            <span>
+              На главную
+            </span>
+          </div>
+          <div class="block__button_mobile-text">
+            <div id="circle"></div>
+            <span>
+              На главную
+            </span>
+          </div>
+        </button>
+      </form>
+      <figure>
+        <div class="left_complete"></div>
+        <div class="right_complete"></div>
+      </figure>
+    <script>
+      var circles = document.getElementsByClassName("circle-loader");
+      var checkmark = document.getElementsByClassName("checkmark");
+      const formResult = document.getElementById('form_result');
+      const formResultText = document.getElementById('form_result_text');
+      for (var j = 0; j < circles.length; j++)
+        circles[j].classList.toggle("load-complete");
+      checkmark[0].classList.toggle('checkmarkActive');
+      function worktime() {
+        var now = new Date();
+        var nowHour = now.getUTCHours();
+        var nowDay = now.getDay();
+        if (nowHour < 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
+          formResultText.innerHTML = "Наше рабочее время Пн - Пт с 9:00 до 18:00";
+        } else {
+          formResultText.innerHTML = "Наш менеджер свяжется с вами в течении 15-ти минут!";
+        }
+      }
+
+      worktime();
+    </script>
+  </body>
+</html>
