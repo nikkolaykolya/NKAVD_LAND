@@ -382,7 +382,7 @@ body._lock .header__body:before {
 		height: 845px;
 		position: absolute;
 		right: 0;
-		top: 330%;
+		top: 300%;
 	}
 
 	.header__link {
@@ -403,12 +403,26 @@ body._lock .header__body:before {
 
 @media (max-width: 1024px) {
 	.figure_container .figure_fifth {
-		display: none;
-		background: url("../img/bg/right_3.png");
-		width: 470px;
-		height: 845px;
-		position: absolute;
-		right: 0;
+		top: 250%;
+	}
+	.figure_container .figure_fourth {
 		top: 280%;
+	}
+}
+@media (max-width: 500px) {
+	.figure_container .figure_first {
+		display: none;
+	}
+	.figure_container .figure_second {
+		display: none;
+	}
+	.figure_container .figure_third {
+		display: none;
+	}
+	.figure_container .figure_fourth {
+		display: none;
+	}
+	.figure_container .figure_fifth {
+		display: none;
 	}
 }
