@@ -401,8 +401,13 @@ body._lock .header__body:before {
   margin-top: -350px;
 }
 
+.block1__background {
+  background: black;
+}
 
-
+.vanta-canvas {
+  transform: scale(80%);
+}
 
 @media (max-width: 1920px) {
   .scale_container {
