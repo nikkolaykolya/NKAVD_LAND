@@ -385,8 +385,8 @@ body._lock .header__body:before {
 }
 
 .scale_container {
-  transform: scale(80%);
-  -webkit-transform: scale(80%);
+  transform: scale(.8);
+  -webkit-transform: scale(.8);
   overflow: hidden;
   margin-top: calc(-300px + (50 + -300) * ((100vw - 768px) / (1920 - 768)));
 }
@@ -397,7 +397,7 @@ body._lock .header__body:before {
 }
 .block1__content-slider_desktop {
   transform: scale(.8);
-  -webkit-transform: scale(.8);
+  -webkit-transform: scale(.8 );
 }
 
 .footer {
