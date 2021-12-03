@@ -931,12 +931,13 @@
 				</div>
 			</div>
 			<div class="block7__form">
-				<form id="form" action="#" method="post" enctype="multipart/form-data">
+				<form id="form" onsubmit="console.log('cfcf')" action="./api/create_deal.php" method="POST"
+					enctype="multipart/form-data">
 					<div class="block7__username">
-						<input class="_req" placeholder="Имя*" type="text" name="username" value="" />
+						<input class="_req" placeholder="Имя*" type="text" name="name" value="" />
 					</div>
 					<div class="block7__numder">
-						<input class="_req" placeholder="Телефон*" type="tel" name="numder" value="" />
+						<input class="_req" placeholder="Телефон*" type="tel" name="phone" value="" />
 					</div>
 					<!-- <div class="block7__email">
 						<input class=" _email" placeholder="Email" type="text" name="email" value="" />
