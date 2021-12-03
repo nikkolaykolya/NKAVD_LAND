@@ -383,6 +383,12 @@ body._lock .header__body:before {
     opacity: 1;
   }
 }
+
+body {
+  transform: scale(80%);
+}
+
+
 @media (max-width: 784px) {
   .block7__wrapper {
     border: 1px solid black;
