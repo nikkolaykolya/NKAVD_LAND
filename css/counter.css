@@ -386,15 +386,18 @@ body._lock .header__body:before {
 
 .scale_container {
   transform: scale(80%);
+  -webkit-transform: scale(80%);
   overflow: hidden;
   margin-top: calc(-300px + (50 + -300) * ((100vw - 768px) / (1920 - 768)));
 }
 
 .block1__text {
   transform: scale(80%);
+  -webkit-transform: scale(80%);
 }
 .block1__content-slider_desktop {
   transform: scale(80%);
+  -webkit-transform: scale(80%);
 }
 
 .footer {
@@ -432,14 +435,17 @@ body._lock .header__body:before {
 
   .scale_container {
     transform: scale(100%);
+    -webkit-transform: scale(100%);
     margin-top: 0;
   }
 
   .block1__text {
     transform: scale(100%);
+    -webkit-transform: scale(100%);
   }
   .block1__content-slider_desktop {
     transform: scale(100%);
+    -webkit-transform: scale(100%);
   }
 
   .footer {
