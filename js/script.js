@@ -164,77 +164,77 @@ for (let smoothLink of smoothLinks) {
 	});
 };
 
-var now = new Date();
-var nowHour = now.getUTCHours();
-var nowDay = now.getDay();
-const formResult = document.getElementById('form_result');
-const formResultText = document.getElementById('form_result_text');
-const circleLoader = document.getElementById('circleLoader')
-const checkMark = document.getElementById('checkmark')
+// var now = new Date();
+// var nowHour = now.getUTCHours();
+// var nowDay = now.getDay();
+// const formResult = document.getElementById('form_result');
+// const formResultText = document.getElementById('form_result_text');
+// const circleLoader = document.getElementById('circleLoader')
+// const checkMark = document.getElementById('checkmark')
 
-document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('form');
-	form.addEventListener('submit', formSend);
+// document.addEventListener('DOMContentLoaded', function () {
+// 	const form = document.getElementById('form');
+// 	form.addEventListener('submit', formSend);
 
-	async function formSend(e) {
-		e.preventDefault();
-		let error = formValidate(form);
-	}
+// 	async function formSend(e) {
+// 		e.preventDefault();
+// 		let error = formValidate(form);
+// 	}
 
-	function formValidate(form) {
-		let error = 0;
-		let formReq = document.querySelectorAll('input');
-		let formMap = {};
-		for (let index = 0; index < formReq.length; index++) {
-			const input = formReq[index];
-			formMap[input.name] = input.value;
+// 	function formValidate(form) {
+// 		let error = 0;
+// 		let formReq = document.querySelectorAll('input');
+// 		let formMap = {};
+// 		for (let index = 0; index < formReq.length; index++) {
+// 			const input = formReq[index];
+// 			formMap[input.name] = input.value;
 
-			if (!input.classList.contains('_req'))
-				continue;
+// 			if (!input.classList.contains('_req'))
+// 				continue;
 
-			formRemoveError(input);
+// 			formRemoveError(input);
 
-			if (input.classList.contains('_email')) {
-				if (emailIsInvalid(input)) {
-					formAddError(input);
-					error++;
-					console.log("Error email validation");
+// 			if (input.classList.contains('_email')) {
+// 				if (emailIsInvalid(input)) {
+// 					formAddError(input);
+// 					error++;
+// 					console.log("Error email validation");
 
-				}
-			}
-			else {
-				if (input.value === '') {
-					formAddError(input);
-					error++;
-					console.log("Error " + input.name + " validation");
+// 				}
+// 			}
+// 			else {
+// 				if (input.value === '') {
+// 					formAddError(input);
+// 					error++;
+// 					console.log("Error " + input.name + " validation");
 
-				}
-			}
-		}
+// 				}
+// 			}
+// 		}
 
-		if (error == 0) {
-			console.log(formMap);
-			formResult.style.display = "block";
-			if (nowHour < 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
-				formResultText.innerHTML = "Наше рабочее время Пн - Пт с 9:00 до 18:00";
-			} else {
-				formResultText.innerHTML = "Наш менеджер свяжется с вами в течении 15-ти минут!";
-			}
-		}
-
-
-	}
-	function formAddError(input) {
-		input.parentElement.classList.add('_error');
-		input.classList.add('_error');
-	}
-	function formRemoveError(input) {
-		input.parentElement.classList.remove('_error');
-		input.classList.remove('_error');
-	}
-	function emailIsInvalid(input) {
-		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-	}
+// 		if (error == 0) {
+// 			console.log(formMap);
+// 			formResult.style.display = "block";
+// 			if (nowHour < 7 | nowHour > 16 | nowDay === 6 | nowDay === 0) {
+// 				formResultText.innerHTML = "Наше рабочее время Пн - Пт с 9:00 до 18:00";
+// 			} else {
+// 				formResultText.innerHTML = "Наш менеджер свяжется с вами в течении 15-ти минут!";
+// 			}
+// 		}
 
 
-});
+// 	}
+// 	function formAddError(input) {
+// 		input.parentElement.classList.add('_error');
+// 		input.classList.add('_error');
+// 	}
+// 	function formRemoveError(input) {
+// 		input.parentElement.classList.remove('_error');
+// 		input.classList.remove('_error');
+// 	}
+// 	function emailIsInvalid(input) {
+// 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+// 	}
+
+
+// });
