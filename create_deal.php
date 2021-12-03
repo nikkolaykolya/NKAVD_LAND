@@ -1,7 +1,7 @@
 <?php
 // необходимые HTTP-заголовки
 // header( 'Access-Control-Allow-Origin: *' );
-header( 'Content-Type: application/json; charset=UTF-8' );
+// header( 'Content-Type: application/json; charset=UTF-8' );
 
 include 'http_request.php';
 
@@ -9,16 +9,16 @@ $name = 'не определено';
 $phone = 'не определен';
 $description = 'Новая сделка';
 
-if ( isset( $_POST['name'] ) ) {
-    $name = $_POST['name'];
+if ( isset( $_POST[ 'name' ] ) ) {
+    $name = $_POST[ 'name' ];
 }
 
-if ( isset( $_POST['phone'] ) ) {
-    $phone = $_POST['phone'];
+if ( isset( $_POST[ 'phone' ] ) ) {
+    $phone = $_POST[ 'phone' ];
 }
 
-if ( isset( $_POST['description'] ) ) {
-    $description = $_POST['description'];
+if ( isset( $_POST[ 'description' ] ) ) {
+    $description = $_POST[ 'description' ];
 }
 
 try {
