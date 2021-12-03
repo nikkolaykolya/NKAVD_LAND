@@ -1,6 +1,6 @@
 <?php
 // необходимые HTTP-заголовки
-header( 'Access-Control-Allow-Origin: *' );
+// header( 'Access-Control-Allow-Origin: *' );
 header( 'Content-Type: application/json; charset=UTF-8' );
 
 include 'http_request.php';
