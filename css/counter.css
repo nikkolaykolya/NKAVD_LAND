@@ -405,9 +405,6 @@ body._lock .header__body:before {
   background: black;
 }
 
-.vanta-canvas {
-  transform: scale(80%);
-}
 
 @media (max-width: 1920px) {
   .scale_container {
