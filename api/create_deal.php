@@ -54,7 +54,7 @@ try {
 
     $response = json_decode( HTTPRequester::HTTPPost( $link, $test ) ) ;
 
-    header( 'Location: https://www.nkavd.com' );
+    header( 'Location: https://nkavd.com' );
     exit();
 
 } catch( Exception $e ) {
