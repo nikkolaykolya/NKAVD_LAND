@@ -392,12 +392,12 @@ body._lock .header__body:before {
 }
 
 .block1__text {
-  transform: scale(80%);
-  -webkit-transform: scale(80%);
+  transform: scale(.8);
+  -webkit-transform: scale(.8);
 }
 .block1__content-slider_desktop {
-  transform: scale(80%);
-  -webkit-transform: scale(80%);
+  transform: scale(.8);
+  -webkit-transform: scale(.8);
 }
 
 .footer {
