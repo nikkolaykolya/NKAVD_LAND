@@ -362,7 +362,7 @@ h6 {
 		left: 0%;
 	}
 	#button:hover #circle {
-		width: 290%;
+		width: 320%;
 		height: 600%;
 		opacity: 1;
 		top: -250px;
@@ -386,7 +386,7 @@ h6 {
 		width: calc(120px + (150 - 120) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.header__phone-question span {
-		font-size: calc(13px + (18 - 13) * ((100vw - 768px) / (1920 - 768)));
+		font-size: calc(13px + (16 - 13) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.header__question span {
 		margin: 0 calc(4px + (20 - 4) * ((100vw - 768px) / (1920 - 768)));
