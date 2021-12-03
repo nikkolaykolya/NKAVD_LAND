@@ -434,18 +434,18 @@ body._lock .header__body:before {
   }
 
   .scale_container {
-    transform: scale(100%);
-    -webkit-transform: scale(100%);
+    transform: scale(1);
+    -webkit-transform: scale(1);
     margin-top: 0;
   }
 
   .block1__text {
-    transform: scale(100%);
-    -webkit-transform: scale(100%);
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
   .block1__content-slider_desktop {
-    transform: scale(100%);
-    -webkit-transform: scale(100%);
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 
   .footer {
