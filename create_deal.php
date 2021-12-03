@@ -1,7 +1,4 @@
 <?php
-// необходимые HTTP-заголовки
-// header( 'Access-Control-Allow-Origin: *' );
-// header( 'Content-Type: application/json; charset=UTF-8' );
 
 include 'http_request.php';
 
@@ -54,6 +51,7 @@ try {
 
     $response = json_decode( HTTPRequester::HTTPPost( $link, $test ) ) ;
 
+//     var_dump( $link);
     header( 'Location: https://nkavd.com/complete.html' );
     exit();
 

@@ -40,6 +40,9 @@ class HTTPRequester {
         //Сохраняем дескриптор сеанса cURL
         /** Устанавливаем необходимые опции для сеанса cURL  */
         curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_CAINFO, 'cacert.pem');
+
         curl_setopt( $curl, CURLOPT_USERAGENT, 'amoCRM-oAuth-client/1.0' );
         curl_setopt( $curl, CURLOPT_URL, $url );
         curl_setopt( $curl, CURLOPT_HTTPHEADER, $headers );
@@ -49,7 +52,9 @@ class HTTPRequester {
         curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, 1 );
         curl_setopt( $curl, CURLOPT_SSL_VERIFYHOST, 2 );
         $response = curl_exec( $curl );
-
+//        if (curl_errno($curl)) { 
+//   print curl_error($curl); 
+//} 
         curl_close( $curl );
         return $response;
     }
