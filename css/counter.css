@@ -1,3 +1,17 @@
+@media (max-width: 910px) {
+	.figure_container .figure_fourth {
+		background: url("../img/bg/left_2.png");
+		width: 499px;
+		height: 671px;
+		position: absolute;
+		top: 250%;
+		display: none;
+	}
+}
+
+
+
+
 .figure_container .figure_first {
 	background: url("../img/bg/left_1mob.png");
 	width: 108px;
