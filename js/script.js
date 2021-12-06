@@ -150,7 +150,7 @@ for (let smoothLink of smoothLinks) {
 	smoothLink.addEventListener('click', function (e) {
 		e.preventDefault();
 		const od = smoothLink.getAttribute('href').replace('#', '');
-		const pxTop = '80';
+		const pxTop = '150';
 		const blockOffset = document.getElementById(od).getBoundingClientRect().top + window.pageYOffset - pxTop;
 		window.scrollTo({ top: blockOffset, behavior: 'smooth' });
 		console.log(window.pageYOffset);
