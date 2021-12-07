@@ -1,0 +1,39 @@
+<?php
+include 'http_request.php';
+
+$subdomain = 'managernkavdcom';
+//Поддомен нужного аккаунта
+$link = 'https://' . $subdomain . '.amocrm.ru/oauth2/access_token';
+//Формируем URL для запроса
+
+/** Соберем данные для запроса */
+$data = [
+    'client_id' => 'fea43de6-fc20-40f5-9890-a324635ede40',
+    'client_secret' => '5VgWJ4nfo6jZNk4czLJpzanV04WddsVc5D24KJfUMyqXNImTId2FwWWNelER4kYY',
+    'grant_type' => 'authorization_code',
+    'code' => 'def50200159012b18a94ffbbd435694b6216cd67f0bf0fb235320ad2254188aeb1acf1f1903c4df4383f17769b6d4c425589912657d1310096031750775ea2fa3acf13d63ec21cf2342a74890e7904c5dfedba36a39ac9e4ab9595a2409f11500d656f54b91ad7877b7d56212ed293e6f1eb845a07752904393982b00983685c9f9be4d3d05466290f8c3f055ae65f0c4c838ea2d3f6013ed4767529272ada69ef479a35ce4abac9f938cddee5d561376326b3afff5b519aa74c7677351b1230f0bf1abc6a8cf6a50d62aa9a3db4b484c8fd0a9133242982e031236adeca0a82bd80cc534344fa187fadf104a358e9671bd8b00db5f4b1e9eb9f7d70f9538cc7d5b3121e5cd51f0bbc32eab7039193bffc23287a69d58b1ca69eab79381740785bfaf04ac733623fc3a55f3bfba84906539d72ae7236cc15e2f684244a6cc41c40a2bd71a34de48b89ff566e7f5553e66f3d7cee80782b046b9f1b13b0706df24187919a1c8ea64e440085b6e48b3773f32e40c45423ba29e806eec93cc73aa551e2871446c739ea8fe60c6bd456efc5ff82dfbae223c1ff4594e7e63165c709b1e9685d3153672fd75f47d42277ed3877cbbd850c514e726e3323',
+    'redirect_uri' => 'https://nkavd.com',
+];
+
+$response = HTTPRequester::HTTPPost( $link, $data );
+echo $response;
+
+// $response = json_decode( $out, true );
+
+// $access_token = $response['access_token'];
+// //Access токен
+// $refresh_token = $response['refresh_token'];
+// //Refresh токен
+// $token_type = $response['token_type'];
+// //Тип токена
+// $expires_in = $response['expires_in'];
+// //Через сколько действие токена истекает
+
+// echo $response;
+
+// {
+//     'token_type':'Bearer',
+//     'expires_in':86400,
+//     'access_token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZhZGM3NWU3OTNlY2VhNjg5ZjYyNzYxNWU0MmM5NjBiZTlhMmUzYWU0ZDUzNTI1NDI5ODk0YzAwOWUwZmFhMTZhODRlYWRjN2Q2NWNjNmJjIn0.eyJhdWQiOiJmZWE0M2RlNi1mYzIwLTQwZjUtOTg5MC1hMzI0NjM1ZWRlNDAiLCJqdGkiOiJmYWRjNzVlNzkzZWNlYTY4OWY2Mjc2MTVlNDJjOTYwYmU5YTJlM2FlNGQ1MzUyNTQyOTg5NGMwMDllMGZhYTE2YTg0ZWFkYzdkNjVjYzZiYyIsImlhdCI6MTYzODQ4MjE1NSwibmJmIjoxNjM4NDgyMTU1LCJleHAiOjE2Mzg1Njg1NTUsInN1YiI6Ijc2OTEwODYiLCJhY2NvdW50X2lkIjoyOTg1NTAwMiwic2NvcGVzIjpbInB1c2hfbm90aWZpY2F0aW9ucyIsImNybSIsIm5vdGlmaWNhdGlvbnMiXX0.VsfizVK-_Y_qxnZE9GU5MHNjM9GCYdcAo483bt9bb1aEIsiJINHe7KB0XzKuryP7EHyXhUBDi_ebRTeOHsLltqQ3zcBPwJhVkkP4IwEJKAx7riYuG6etstKt_7ooHqRdtLkkeZwjevLb4y0KRRrS-d5NJPdxzgfHt6vcSYv7uimLr8822ci9YBMDPDkgkIlCsjbK-AdM0m5DJyN1Ig-Jdr2WcFU54qYft2kr4UHfyJGF7QWePJTfkVSWFblObZOGnXYCEsN6Fd2opKH2sZiq5VTMv9_nDIYhkZQPZu_77oL1pWlAYFXlXtMSeUqzVg4LoiAbB2Ifc_U6Oak31h1Adw',
+//     'refresh_token':'def502003ef7bbaea3a4ddc06b3a1cee6f6883703d205c38ba0683f66af9810289e477ed16dac498aea8f22d61961ad871a0fe43777802ead8dbaf2cd55b9064da358c7bd67d9d22fd8b0f248c3c7e883bc3c6e6b5ebec59d4e7f526ab083a4d62c6ded6698bccec97eb3e18822dd86b1d49301cc91134f2d379f7e83f5606dad975a592940a9d670eca9dd40ac30529ec1bd279fb6ea056ef93f94a30385e1dd5343d46e35dea73f4582c8a32a4c2badc0e6c1eb2ce0ec36a1a3d0e6b9dd294b73a4960c632beaa54ce1a0a8f48ad74e1a99bf574ff82f5e6286aac38b90704dbc15d6af140878de51f4907b5f9ac7be364c335329272d585a13b056da6c93e2806a52d389ea693a2f0b99dda877f6dd847d63fd3619ca520daa9cf336e4ac6ba695bdf622d4495b687752595986e1a973eed2b3564667ad1e55fc73f52febb53fd4a80bdfcc79de47724cecf32f7f51293983df6e10ebd86cae35a38b7173f07351c795a72acdf8d63f4cc5f1dfc686d83249091469e8b5f1afeef9a858104ecb1332c71c77cec828f8eeb0f0a71a9b5d0c7e8f096dfd3a6df561765ee43374b83778b5bd58db8796cdc861a6ebb32eee55b881108a35b9e8658fe0f41b345ac4c6e7bfe72f1412762'
+// }
