@@ -174,6 +174,10 @@ new Swiper('.block1__content-slider_mobile', {
 		el: ".swiper-pagination",
 		clickable: true,
 	},
+	autoplay: {
+		delay: 8000,
+		disableOnInteraction: false,
+	},
 	loop: true,
 	slidesPerGroup: 1,
 	freeMode: false,

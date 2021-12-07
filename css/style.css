@@ -410,6 +410,8 @@ a[x-apple-data-detectors] {
 .header__name span {
 	margin-top: 5%;
 	letter-spacing: 2px;
+	font-family: Bebas Neue;
+	font-weight: 900;
 }
 
 .header__burger {
@@ -501,11 +503,10 @@ a[x-apple-data-detectors] {
 }
 
 @media (max-width: 1100px) {
-  .dropdown_phones a {
-      font-size: 12px;
-  }
+	.dropdown_phones a {
+		font-size: 12px;
+	}
 }
-
 
 .dropdown_phones a:hover {
 	color: #ffd561;
@@ -635,14 +636,13 @@ a[x-apple-data-detectors] {
 }
 
 @media (max-width: 1920px) {
-
 	.header__phone-question {
 		width: calc(250px + (410 - 250) * ((100vw - 768px) / (1920 - 768)));
 		font-size: calc(11px + (18 - 11) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.header__phone {
 		padding-right: calc(20px + (25 - 20) * ((100vw - 768px) / (1920 - 768)));
-		padding-left: calc(80px + (100 - 30) * ((100vw - 768px) / (1920 - 768)));
+		padding-left: calc(0px + (100 - 0) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.header__question {
 		width: calc(120px + (150 - 120) * ((100vw - 768px) / (1920 - 768)));
@@ -674,7 +674,6 @@ a[x-apple-data-detectors] {
 	.header__numder {
 		display: none;
 	}
-
 }
 
 @media (max-width: 768px) {
@@ -1320,12 +1319,12 @@ a[x-apple-data-detectors] {
 		-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	}
-	.flip-card[data-active="active"]  .flip-card-inner {
+	.flip-card[data-active="active"] .flip-card-inner {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
 
-	.flip-card>*{
+	.flip-card > * {
 		pointer-events: none;
 	}
 
@@ -1865,7 +1864,7 @@ a[x-apple-data-detectors] {
 .block4__subtitle {
 	margin-top: 10px;
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 @media (max-width: 1920px) {
@@ -2737,7 +2736,6 @@ input._error {
 }
 
 @media (max-width: 768px) {
-
 	.footer__center-nomder,
 	.footer__colomn_right {
 		display: none;
@@ -2757,5 +2755,4 @@ input._error {
 	.footer__center {
 		margin-left: calc(30px + (130 - 30) * ((100vw - 320px) / (768 - 320)));
 	}
-
 }
