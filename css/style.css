@@ -481,6 +481,13 @@ a[x-apple-data-detectors] {
     transition: 0.5s ease;
 }
 
+@media (max-width: 1100px) {
+  .dropdown_phones a {
+      font-size: 12px;
+  }
+}
+
+
 .dropdown_phones a:hover {
     color: #ffd561;
 }
@@ -616,7 +623,7 @@ a[x-apple-data-detectors] {
     }
     .header__phone {
         padding-right: calc(20px + (25 - 20) * ((100vw - 768px) / (1920 - 768)));
-        padding-left: calc(30px + (100 - 30) * ((100vw - 768px) / (1920 - 768)));
+        padding-left: calc(80px + (100 - 30) * ((100vw - 768px) / (1920 - 768)));
     }
     .header__question {
         width: calc(120px + (150 - 120) * ((100vw - 768px) / (1920 - 768)));
