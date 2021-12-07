@@ -1320,10 +1320,15 @@ a[x-apple-data-detectors] {
 		-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	}
-	.flip-card:hover .flip-card-inner {
+	.flip-card[data-active="active"]  .flip-card-inner {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
+	.flip-card>*{
+		pointer-events: none;
+	}
+
 	.flip-card-front,
 	.flip-card-back {
 		position: absolute;
