@@ -1,0 +1,45 @@
+.header__burger span {
+	position: absolute;
+	background-color: #ffd561;
+	width: 100%;
+	height: 3px;
+	top: 9px;
+	left: 0;
+	transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.header__burger::before,
+.header__burger::after {
+	content: "";
+	background-color: #ffd561;
+	position: absolute;
+	transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	height: 3px;
+}
+.header__burger::before {
+	top: 0;
+	width: 60%;
+	right: 0;
+}
+.header__burger::after {
+	bottom: 0;
+	width: 80%;
+	right: 0;
+}
+
+.header__burger._active span {
+	transform-origin: top;
+	transform: rotatez(-45deg);
+	background-color: #000;
+}
+.header__burger._active::before {
+	transform-origin: bottom;
+	width: 60%;
+	transform: rotatez(45deg) translate(-4px, 9px);
+	background-color: #000;
+}
+.header__burger._active::after {
+	transform-origin: bottom;
+	width: 55%;
+	transform: translate(-1px, -4px) rotatez(45deg);
+	background-color: #000;
+}

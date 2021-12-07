@@ -1,0 +1,353 @@
+.header {
+	position: fixed;
+	width: 100%;
+	height: 78px;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	font-family: $ff1;
+}
+.header::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: rgba(000, 000, 000, 0.5);
+	backdrop-filter: blur(4px);
+	z-index: 1;
+}
+.header__wrapper {
+	position: relative;
+	z-index: 2;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.header__body {
+	display: flex;
+	justify-content: space-between;
+	height: 78px;
+	align-items: center;
+}
+
+.header__logo-name {
+	font-family: $ff2;
+	display: flex;
+	align-items: center;
+	margin-left: 31px;
+}
+.header__img {
+	width: 24px;
+	height: 44px;
+}
+.header__img_color_dark {
+	display: none;
+}
+.header__name {
+	color: #ffd561;
+	margin-left: 10px;
+	font-weight: 700;
+	font-size: 48px;
+	height: 38px;
+	display: flex;
+	align-items: center;
+	span {
+		margin-top: 5%;
+		letter-spacing: 2px;
+	}
+}
+.header__burger {
+	display: none;
+}
+.header__list {
+	display: flex;
+	justify-content: space-between;
+	max-width: 760px;
+	width: 760px;
+}
+.header__link {
+	white-space: nowrap;
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+.header__phone-question {
+	display: flex;
+	justify-content: space-between;
+	width: 410px;
+	height: 100%;
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+.header__phone {
+	display: flex;
+	align-items: center;
+	a {
+		color: #ffd561;
+		margin: 0 20px;
+	}
+}
+.header__phone:hover {
+	text-decoration: underline;
+}
+.header__question {
+	background: #ffd561;
+	color: #000;
+	height: 100%;
+	font-weight: 700;
+	span {
+		margin: 0 20px;
+	}
+}
+.header__list-subtitle {
+	display: none;
+}
+.header__list-button {
+	display: none;
+}
+.header__numder,
+.header__network {
+	display: none;
+}
+.fill-form {
+	height: 100%;
+}
+
+@media (min-width: 768px) {
+	.header__link:hover {
+		color: #ffd561;
+	}
+
+	/*-------*/
+	#button {
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	#button span {
+		position: relative;
+		transition: all 0.45s ease-Out;
+	}
+
+	#circle {
+		width: 0%;
+		height: 0%;
+		opacity: 0;
+		line-height: 40px;
+		border-radius: 100%;
+		background: #000;
+		position: absolute;
+		transition: all 0.4s ease-Out;
+		top: 0%;
+		left: 0%;
+	}
+
+	#button:hover #circle {
+		width: 290%;
+		height: 600%;
+		opacity: 1;
+		top: -250px;
+		left: -250px;
+	}
+
+	#button:hover span {
+		color: #fff;
+	}
+}
+@media (max-width: 1920px) {
+	.header__phone-question {
+		width: calc(220px + (410 - 220) * ((100vw - 768px) / (1920 - 768)));
+		font-size: calc(11px + (18 - 11) * ((100vw - 768px) / (1920 - 768)));
+		span {
+			font-size: calc(11px + (18 - 11) * ((100vw - 768px) / (1920 - 768)));
+		}
+	}
+	.header__question {
+		span {
+			margin: 0 calc(4px + (20 - 4) * ((100vw - 768px) / (1920 - 768)));
+		}
+	}
+	.header__phone {
+		a {
+			margin: 0 calc(4px + (20 - 4) * ((100vw - 768px) / (1920 - 768)));
+			margin-top: 2px;
+		}
+	}
+	.header__logo-name {
+		margin-left: calc(13px + (31 - 13) * ((100vw - 768px) / (1920 - 768)));
+	}
+
+	.header__name {
+		margin-left: calc(6px + (10 - 6) * ((100vw - 768px) / (1920 - 768)));
+		font-size: calc(27px + (48 - 27) * ((100vw - 768px) / (1920 - 768)));
+	}
+	.header__list {
+		width: calc(430px + (760 - 430) * ((100vw - 768px) / (1920 - 768)));
+	}
+	.header__link {
+		font-size: calc(13px + (18 - 13) * ((100vw - 768px) / (1920 - 768)));
+	}
+	.header__network,
+	.header__line,
+	.header__numder {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.body._lock {
+		overflow: hidden;
+	}
+	.header__name {
+		display: none;
+	}
+	.header__burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		margin-right: 20px;
+		cursor: pointer;
+		z-index: 500;
+	}
+	.header__list-button {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 264px;
+		height: 78px;
+		bottom: 40px;
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		background: #ffd561;
+		margin-top: 30px;
+		div {
+			font-size: 24px;
+			font-weight: 700;
+			color: #000;
+			height: 78px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	//Инпорт крестик
+	@import "_cross";
+
+	.header__phone-question {
+		display: none;
+	}
+	.header__list {
+		//	display: none;
+		position: relative;
+		z-index: 100;
+		display: inline;
+		width: 290px;
+		top: 90px;
+		text-align: center;
+		margin: 0 auto;
+		//min-height: 500px;
+		max-height: 550px;
+		padding-top: 25px;
+		padding-bottom: 1px;
+		li {
+			margin-bottom: 50px;
+		}
+	}
+
+	.fill-form {
+		.header__list-button {
+			//margin-top: 150px;
+		}
+	}
+	.header__fill-form {
+		//width: 290px;
+		height: 70px;
+		margin: 0 auto;
+		margin-top: 100px;
+		margin-bottom: 15px;
+	}
+	.header__link {
+		font-size: 24px;
+		color: #000;
+	}
+	.header__body {
+		display: flex;
+		justify-content: space-between;
+	}
+	.header__menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, #ffd561 calc(100vh - 78px), #ffde7a 78px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		overflow: auto;
+		transition: all 0.7s ease 0s;
+		transform: translate(-100%, 0px);
+	}
+	.header__menu._active::before {
+		background-color: #ffde7a;
+		position: fixed;
+		z-index: 10000;
+	}
+	.header__menu._active {
+		transform: translate(0px, 0px);
+	}
+	.header__img_color_white._active {
+		display: none;
+	}
+	.header__img_color_dark._active {
+		display: block;
+		transition: all 2s ease 0s;
+	}
+	.header__img {
+		position: relative;
+		z-index: 6;
+	}
+	/*------*/
+
+	.header__line {
+		display: block;
+		margin: 0 auto;
+		border: 1px solid #000000;
+		width: 173px;
+		height: 1px;
+	}
+	.header__numder {
+		display: block;
+		div {
+			a {
+				font-family: $ff1;
+				font-size: 18px;
+				color: #000;
+				font-weight: 400;
+			}
+			margin-bottom: 20px;
+		}
+	}
+
+	.header__network {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.header__network_link {
+		img {
+			width: 120px;
+			height: 60px;
+		}
+		padding-bottom: 20px;
+	}
+	.header__network_link:active {
+		opacity: 0.7;
+	}
+
+	/*-------*/
+}
