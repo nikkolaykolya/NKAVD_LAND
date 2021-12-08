@@ -2126,6 +2126,21 @@ a[x-apple-data-detectors] {
 	transition: all 0.7s ease 0s;
 }
 
+.block6__transition {
+	width: 115px;
+	height: 30px;
+	color: #ffffff;
+	/* margin-bottom: 30px; */
+}
+.block6__transition-info {
+	display: flex;
+}
+.block6__transition-img {
+	width: 14px;
+	height: 14px;
+}
+.block6__transition-title {
+}
 .block6__box:hover .block6__text {
 	position: absolute;
 	opacity: 1;
@@ -2135,14 +2150,14 @@ a[x-apple-data-detectors] {
 }
 
 .block6__text {
+	position: absolute;
 	width: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	height: 100px;
-	background: rgba(0, 0, 0, 0.54);
-	-webkit-backdrop-filter: blur(6px);
-	backdrop-filter: blur(6px);
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
 	font-weight: 500;
 	font-size: 18px;
 	color: #fff;
@@ -2151,15 +2166,32 @@ a[x-apple-data-detectors] {
 	align-items: center;
 }
 
-.block6__text span {
-	margin-left: 35px;
+.block6__transition-text {
+	position: relative;
+	background: rgba(0, 0, 0, 0.54);
+	width: 100%;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	display: flex;
+	justify-content: center;
+}
+
+.block6__transition-text div {
+	position: relative;
+	width: 90%;
+	height: 70px;
+	margin: 0 auto;
+	line-height: 14px;
+	z-index: 500;
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
 }
 
 .block6__box {
 	margin: 10px 0;
 }
 
-.block6__box img {
+.block6__box_img {
 	width: 635px;
 	height: 356px;
 }
@@ -2172,17 +2204,17 @@ a[x-apple-data-detectors] {
 		width: calc(300px + (635 - 300) * ((100vw - 768px) / (1920 - 768)));
 		height: calc(170px + (356 - 170) * ((100vw - 768px) / (1920 - 768)));
 	}
-	.block6__box img {
+	.block6__box_img {
 		width: calc(300px + (635 - 300) * ((100vw - 768px) / (1920 - 768)));
 		height: calc(170px + (356 - 170) * ((100vw - 768px) / (1920 - 768)));
 	}
-	.block6__text {
+	/* 	.block6__text {
 		height: calc(70px + (100 - 70) * ((100vw - 320px) / (1920 - 320)));
-	}
-	.block6__text span {
+	} */
+	.block6__text div {
 		font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
-		margin-left: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
-		margin-right: 15px;
+		/* 		margin-left: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
+		margin-right: 15px; */
 		font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
 	}
 }
@@ -2196,7 +2228,7 @@ a[x-apple-data-detectors] {
 		width: 310px;
 		height: 170px;
 	}
-	.block6__box img {
+	.block6__box_img {
 		width: 310px;
 		height: 170px;
 	}
