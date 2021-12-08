@@ -200,7 +200,69 @@ new Swiper('.block1__content-slider_mobile', {
 		}
 	}
 });
+new Swiper('.block2__content-slider', {
+	slidesPerView: 1,
+	slidesPerGroup: 1,
+	effect: "coverflow",
+	spaceBetween: 30,
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: "auto",
+	loop: true,
+	coverflowEffect: {
+		rotate: 50,
+		stretch: 0,
+		depth: 100,
+		modifier: 1,
+		slideShadows: false,
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	autoplay: {
+		delay: 4000,
+		disableOnInteraction: false,
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
 
+
+	/* 	slidesPerView: 1,
+		centeredSlides: true,
+		spaceBetween: 30,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+			autoplay: {
+				delay: 8000,
+				disableOnInteraction: false,
+			},
+		loop: true,
+		slidesPerGroup: 1,
+		freeMode: false, */
+	/* 	breakpoints: {
+			450: {
+				slidesPerView: 2.2,
+				spaceBetween: 60,
+			},
+			380: {
+				slidesPerView: 2,
+				spaceBetween: 50,
+			},
+			350: {
+				slidesPerView: 1.75,
+				spaceBetween: 40,
+			},
+			100: {
+				slidesPerView: 1.5,
+				spaceBetween: 30,
+			}
+		} */
+});
 // Переход
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
