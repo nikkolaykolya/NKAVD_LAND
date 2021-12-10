@@ -14,13 +14,15 @@
 	left: 0;
 	z-index: -1;
 	padding-top: 0.1px;
+	overflow: hidden;
 	canvas {
-		height: 2000px;
+		width: 200vh;
+		height: 5000px;
 	}
 }
 
 @media (max-width: 1920px) {
 	.block1 {
-		padding-bottom: calc(20px + (150 - 20) * ((100vw - 320px) / (1920 - 320)));
+		//padding-bottom: calc(20px + (150 - 20) * ((100vw - 320px) / (1920 - 320)));
 	}
 }

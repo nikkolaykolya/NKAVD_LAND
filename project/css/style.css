@@ -708,16 +708,12 @@ h6 {
   left: 0;
   z-index: -1;
   padding-top: 0.1px;
+  overflow: hidden;
 }
 
 .block1__background canvas {
-  height: 2000px;
-}
-
-@media (max-width: 1920px) {
-  .block1 {
-    padding-bottom: calc(20px + (150 - 20) * ((100vw - 320px) / (1920 - 320)));
-  }
+  width: 200vh;
+  height: 5000px;
 }
 
 /*Импорт блока 2*/
@@ -746,6 +742,11 @@ h6 {
   width: 1100px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.block2__content-slider .swiper-button-prev,
+.block2__content-slider .swiper-button-next {
+  color: #000;
 }
 
 .block2__content-box {
