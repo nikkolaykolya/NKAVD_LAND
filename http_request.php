@@ -52,11 +52,11 @@ class HTTPRequester {
         curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, 1 );
         curl_setopt( $curl, CURLOPT_SSL_VERIFYHOST, 2 );
         $response = curl_exec( $curl );
-//                if ( curl_errno( $curl ) ) {
-//
-//           echo curl_error( $curl );
-//
-//        }
+        //                if ( curl_errno( $curl ) ) {
+        //
+        //           echo curl_error( $curl );
+        //
+        //        }
 
         curl_close( $curl );
         return $response;
