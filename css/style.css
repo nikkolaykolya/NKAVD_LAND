@@ -2349,6 +2349,7 @@ input._error {
 		height: calc(50px + (70 - 50) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.block7__text-subtitle {
+		width: calc(210px + (643 - 210) * ((100vw - 320px) / (1920 - 320)));
 		font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
 	}
 	.block7__form {
@@ -2375,6 +2376,13 @@ input._error {
 		flex-direction: column;
 		text-align: center;
 	}
+	.block7__text-title {
+		margin-top: calc(40px + (0 - 40) * ((100vw - 320px) / (768 - 320)));
+	}
+	.block7__form {
+		height: 85%;
+		margin-top: 40px;
+	}
 	.desktop {
 		display: none;
 	}
@@ -2382,10 +2390,10 @@ input._error {
 		display: block;
 	}
 	.block7__text-quotes {
-		display: none;
+		/*display: none;*/
 	}
 	.block7__text-title {
-		display: none;
+		/*display: none;*/
 	}
 	.block7__username input::-webkit-input-placeholder,
 	.block7__numder input::-webkit-input-placeholder,
