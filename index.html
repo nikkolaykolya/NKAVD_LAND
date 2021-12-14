@@ -1009,10 +1009,12 @@
 				<div class="block7__form">
 					<form id="form" action="create_deal.php" method="post" enctype="multipart/form-data">
 						<div class="block7__username">
-							<input class="_req" placeholder="Имя*" type="text" name="name" value="" required />
+							<input class="_req" placeholder="Имя *" type="text" name="name" value="" required />
 						</div>
 						<div class="block7__numder">
-							<input class="_req" placeholder="Телефон*" type="tel" name="phone" value="" required />
+							<input id="phoneInput" class="_req" placeholder="Телефон*"
+								pattern="^\+375(\s+)?\(?(17|25|29|33|44)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
+								type="tel" name="phone" required />
 						</div>
 						<!-- <div class="block7__email">
 							<input class=" _email" placeholder="Email" type="text" name="email" value="" />
@@ -1120,6 +1122,7 @@
 
 
 	<!--Подключение Js-->
+	<script type="text/javascript" src="js/masked_input_1.4-min.js"></script>
 	<script type="text/javascript" src="js/cloudflare.js"></script>
 	<script type="text/javascript" src="js/jsdelivr.js"></script>
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -1127,6 +1130,13 @@
 	<script type="text/javascript" src="js/counter.js"></script>
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script>
+
+		MaskedInput({
+			elm: document.getElementById('phoneInput'), // select only by id
+			format: '+38 (___) ___-__-__',
+			separator: '+38 (   )-'
+		});
+
 		ScrollReveal().reveal('.block2', {
 			delay: 150
 		});
