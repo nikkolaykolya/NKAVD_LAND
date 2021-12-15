@@ -49,10 +49,10 @@ try {
         ),
     );
 
-    $response = json_decode( HTTPRequester::HTTPPost( $link, $test ) ) ;
+    // $response = json_decode( HTTPRequester::HTTPPost( $link, $test ) ) ;
 
     //     var_dump( $response );
-    header( 'Location: https://nkavd.com/complete.html' );
+    header( 'Location: ../complete.html' );
     exit();
 
 } catch( Exception $e ) {
