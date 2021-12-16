@@ -570,8 +570,8 @@ a[x-apple-data-detectors] {
 		transition: all 0.45s ease-Out;
 	}
 	#circle {
-		width: 0%;
-		height: 0%;
+		width: 0;
+		height: 0;
 		opacity: 0;
 		line-height: 40px;
 		border-radius: 100%;
@@ -579,8 +579,8 @@ a[x-apple-data-detectors] {
 		position: absolute;
 		-webkit-transition: all 0.4s ease-Out;
 		transition: all 0.4s ease-Out;
-		top: 0%;
-		left: 0%;
+		top: 0;
+		left: 0;
 	}
 	#button:hover #circle {
 		width: 320%;
@@ -610,8 +610,8 @@ a[x-apple-data-detectors] {
 		transition: all 0.45s ease-Out;
 	}
 	#circle {
-		width: 0%;
-		height: 0%;
+		width: 0;
+		height: 0;
 		opacity: 0;
 		line-height: 40px;
 		border-radius: 100%;
@@ -873,7 +873,7 @@ a[x-apple-data-detectors] {
 		margin-bottom: 20px;
 	}
 	.header__numder div a {
-		font-family: Montserrat;
+		font-family: Montserrat, serif;
 		font-size: 18px;
 		color: #000;
 		font-weight: 400;
@@ -1679,7 +1679,7 @@ a[x-apple-data-detectors] {
 	border: 1px solid #ffd561;
 	background: #ffffff;
 	position: relative;
-	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0px 0px rgba(0, 0, 0, 0);
 	transition: box-shadow 0.15s ease-out;
 }
 
@@ -2415,7 +2415,7 @@ input._error {
 	.block7__description input:-khtml-placeholder {
 		font-size: 12px;
 	}
-	.block7__username input:placeholder,
+	.block7__username input::placeholder,
 	.block7__numder input:placeholder,
 	.block7__description input:placeholder {
 		font-size: 12px;
