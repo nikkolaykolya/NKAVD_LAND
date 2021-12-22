@@ -55,3 +55,33 @@
 	margin-top: 5px;
 	margin-bottom: 20px;
 }
+
+@media (max-width: 1920px) {
+	.block2__wrapper {
+		width: calc(320px + (1920 - 320) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.heading {
+		font-size: calc(22px + (48 - 22) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.block2__heading {
+		width: calc(300px + (1200 - 300) * ((100vw - 320px) / (1920 - 320)));
+		margin: calc(22px + (60 - 22) * ((100vw - 320px) / (1920 - 320))) auto;
+	}
+	.block2__content-slider {
+		width: calc(290px + (1100 - 290) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.block6__box_img {
+		width: calc(270px + (970 - 270) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	.block2__text {
+		width: calc(300px + (765 - 300) * ((100vw - 320px) / (1920 - 320)));
+		font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.block2__subtitle {
+		margin-top: 5px;
+		margin-bottom: 20px;
+	}
+
+	//width: calc(660px + (1305 - 660) * ((100vw - 768px) / (1920 - 768)));
+}

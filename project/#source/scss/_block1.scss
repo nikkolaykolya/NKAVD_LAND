@@ -9,7 +9,7 @@
 .block1__background {
 	margin: -150px auto 0 auto;
 	width: 100%;
-	height: calc(280px + 150px);
+	height: 430px;
 	top: 0;
 	left: 0;
 	z-index: -1;
@@ -24,5 +24,10 @@
 @media (max-width: 1920px) {
 	.block1 {
 		//padding-bottom: calc(20px + (150 - 20) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.block1__background {
+		margin: -150px auto 0 auto;
+		width: 100%;
+		height: calc(330px + (430 - 330) * ((100vw - 320px) / (1920 - 320)));
 	}
 }

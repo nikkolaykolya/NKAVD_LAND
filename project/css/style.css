@@ -703,7 +703,7 @@ h6 {
 .block1__background {
   margin: -150px auto 0 auto;
   width: 100%;
-  height: calc(280px + 150px);
+  height: 430px;
   top: 0;
   left: 0;
   z-index: -1;
@@ -714,6 +714,14 @@ h6 {
 .block1__background canvas {
   width: 200vh;
   height: 5000px;
+}
+
+@media (max-width: 1920px) {
+  .block1__background {
+    margin: -150px auto 0 auto;
+    width: 100%;
+    height: calc(330px + (430 - 330) * ((100vw - 320px) / (1920 - 320)));
+  }
 }
 
 /*Импорт блока 2*/
@@ -771,6 +779,33 @@ h6 {
 .block2__subtitle {
   margin-top: 5px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 1920px) {
+  .block2__wrapper {
+    width: calc(320px + (1920 - 320) * ((100vw - 320px) / (1920 - 320)));
+  }
+  .heading {
+    font-size: calc(22px + (48 - 22) * ((100vw - 320px) / (1920 - 320)));
+  }
+  .block2__heading {
+    width: calc(300px + (1200 - 300) * ((100vw - 320px) / (1920 - 320)));
+    margin: calc(22px + (60 - 22) * ((100vw - 320px) / (1920 - 320))) auto;
+  }
+  .block2__content-slider {
+    width: calc(290px + (1100 - 290) * ((100vw - 320px) / (1920 - 320)));
+  }
+  .block6__box_img {
+    width: calc(270px + (970 - 270) * ((100vw - 320px) / (1920 - 320)));
+  }
+  .block2__text {
+    width: calc(300px + (765 - 300) * ((100vw - 320px) / (1920 - 320)));
+    font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+  }
+  .block2__subtitle {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
 }
 
 /*Импорт блока 3*/
