@@ -14,7 +14,7 @@ if ($_SESSION['converted'] === true) {
         <link rel="stylesheet" href="css/counter.css">
         <link rel="stylesheet" href="css/complete.css">
         <!-- Google Tag Manager -->
-        <script>
+        <!-- <script>
             (function (w, d, s, l, i) {
                 w[l] = w[l] || [];
                 w[l].push({
@@ -29,9 +29,9 @@ if ($_SESSION['converted'] === true) {
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                 f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', 'GTM-T2NDN39');
-        </script>
+        </script> -->
         <!-- End Google Tag Manager -->
-        <script>
+        <!-- <script>
             (function (h, o, t, j, a, r) {
                 h.hj = h.hj || function () {
                     (h.hj.q = h.hj.q || []).push(arguments)
@@ -43,11 +43,11 @@ if ($_SESSION['converted'] === true) {
                 r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
                 a.appendChild(r);
             })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-        </script>
+        </script> -->
 
 
         <!-- Facebook Pixel Code -->
-        <script>
+        <!-- <script>
             !function (f, b, e, v, n, t, s) {
                 if (f.fbq) return;
                 n = f.fbq = function () {
@@ -70,7 +70,7 @@ if ($_SESSION['converted'] === true) {
             fbq('track', 'PageView');
         </script>
         <noscript><img height="1" width="1" style="display:none"
-                       src="https://www.facebook.com/tr?id=1185247878667986&ev=PageView&noscript=1"/></noscript>
+                       src="https://www.facebook.com/tr?id=1185247878667986&ev=PageView&noscript=1"/></noscript> -->
         <!-- End Facebook Pixel Code -->
 
     </head>
@@ -126,10 +126,10 @@ if ($_SESSION['converted'] === true) {
     </script>
     </body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
+    <!-- <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2NDN39" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    </noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
     </html>
