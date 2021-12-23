@@ -2,7 +2,15 @@
 include 'http_request.php';
 include_once '../api/config/database.php';
 include_once '../api/objects/clientRequest.php';
+
+ini_set('session.gc_maxlifetime', 86400);
 session_start();
+// Если пользователь недавно оставил заявку – направляем его сразу на страницу "Спасибо"
+if ($_SESSION['converted'] && $_SESSION['lead_generated']) {
+    header('Location: ../complete.php');
+    exit();
+}
+
 $name = 'Никита тест';
 $phone = '-';
 $description = 'Никита тест';
@@ -26,7 +34,9 @@ function getAccessToken()
     $subdomain = 'managernkavdcom';
     $client_id = 'fea43de6-fc20-40f5-9890-a324635ede40';
     $client_secret = '5VgWJ4nfo6jZNk4czLJpzanV04WddsVc5D24KJfUMyqXNImTId2FwWWNelER4kYY';
-    $fileString = file_get_contents('test.json');
+    $code = 'def50200de2c07c02961b4afad2debac5837ba87eaf5c05de9b1133fd7f74c46e71e173292ebedc71de3d21b6003336d17d9d379ceeff250381fbb48fcfba55dacb6340927bbe675f32cd44b71a2bf506d9fa7624bc2b97299bfced292a724da84e7cf101fa761e1ff9892d549c6545e8ffef1245b0949e8673db50edf47c032566423e5ead5d3d5103bb89154c9a77ae03657d2baec218f6bcdcef67d09a68f371af5bc464fdfcc3a96b6cc824fcca2be585915b9ea90bf7326877e7d030f6d43cebd12eebdb1cde05ce7db3c7b02c2e520ee058e1a777b6437d59e4f22ab009ce937ac23e40e755ae76cc18c783849e942ec7f8571894dcdf0c55d0c93d7151e77f3b74c4393b7ffad29019445b560d6c225af2a40e85c7a672a19ba4e9db34ba2181b039de774e55e917855682136b0ad4a56748ff63cba7fdc0163aaeee0717833d20f05ff5691a41c43e291537f9b06b70cb8fecf0de95add20b6cc0891596c79f1d79a025f08b9fc053d5614a61cf7f7b091f0b0a5a0a70a4c86e23731db78e5f5abaccee48e5d68c5c4612bc45da848947bd78b1857bdb4b71c495231d5e0a9604fdcaac4aa10d51f53413d716c450148b16048b3ca41fe';
+
+    $fileString = file_get_contents('E:\amocrm\test.json');
     if ($fileString === false) {
         // deal with error...
     }
@@ -70,22 +80,31 @@ function getAccessToken()
                 'client_id' => $client_id,
                 'client_secret' => $client_secret,
                 'grant_type' => 'authorization_code',
-                'code' => 'def50200159012b18a94ffbbd435694b6216cd67f0bf0fb235320ad2254188aeb1acf1f1903c4df4383f17769b6d4c425589912657d1310096031750775ea2fa3acf13d63ec21cf2342a74890e7904c5dfedba36a39ac9e4ab9595a2409f11500d656f54b91ad7877b7d56212ed293e6f1eb845a07752904393982b00983685c9f9be4d3d05466290f8c3f055ae65f0c4c838ea2d3f6013ed4767529272ada69ef479a35ce4abac9f938cddee5d561376326b3afff5b519aa74c7677351b1230f0bf1abc6a8cf6a50d62aa9a3db4b484c8fd0a9133242982e031236adeca0a82bd80cc534344fa187fadf104a358e9671bd8b00db5f4b1e9eb9f7d70f9538cc7d5b3121e5cd51f0bbc32eab7039193bffc23287a69d58b1ca69eab79381740785bfaf04ac733623fc3a55f3bfba84906539d72ae7236cc15e2f684244a6cc41c40a2bd71a34de48b89ff566e7f5553e66f3d7cee80782b046b9f1b13b0706df24187919a1c8ea64e440085b6e48b3773f32e40c45423ba29e806eec93cc73aa551e2871446c739ea8fe60c6bd456efc5ff82dfbae223c1ff4594e7e63165c709b1e9685d3153672fd75f47d42277ed3877cbbd850c514e726e3323',
+                'code' => $code,
                 'redirect_uri' => 'https://nkavd.com',
             ];
         }
 
         $response = json_decode(HTTPRequester::HTTPPost($link, "", $data));
+        // Токен для обновления просрочен – обновляем по коду из црм
         if ($response->status >= 400) {
-            // Ошибка - отправляем заявку на сервер NKAVD
-        } else {
-            //  Новый токен авторизации получен - сохраняем его в файл
-            overwriteFile($current_date, $fileJson, $response);
-            return $response->access_token;
+            echo "<br>Requesting new key by code</br>";
+            $data = [
+                'client_id' => $client_id,
+                'client_secret' => $client_secret,
+                'grant_type' => 'authorization_code',
+                'code' => $code,
+                'redirect_uri' => 'https://nkavd.com',
+            ];
+            $response = json_decode(HTTPRequester::HTTPPost($link, "", $data));
+
         }
+        if ($response->status >= 400)
+            return '';
+        else
+            return overwriteFile($current_date, $fileJson, $response);
     }
 
-    return $fileJson['access_token'];
 }
 
 
@@ -98,18 +117,19 @@ function overwriteFile($current_date, $fileJson, $response)
     $fileJson['refresh_token_valid_till'] = $current_date->add(new DateInterval('P89D'))->format('Y-m-d H:i:s');
 
     try {
-        file_put_contents('lastAuth.json', json_encode($response));
-        $f = fopen('test.json', 'w');
+        chmod('E:\amocrm\lastAuth.json', 0777);
+        chmod('E:\amocrm\test.json', 0777);
+        file_put_contents('E:\amocrm\lastAuth.json', json_encode($response));
+        $f = fopen('E:\amocrm\test.json', 'w+');
         fwrite($f, json_encode($fileJson));
         fclose($f);
     } catch (Exception $ex) {
         echo "<br>  Ошибка:" . $ex->getMessage() . "</br>";
     } finally {
-        echo "<br> access_token: " . $response->access_token . "</br>";
-        echo "<br> refresh_token: " . $response->refresh_token . "</br>";
         return $response->access_token;
     }
 }
+
 
 
 function sendToAmoCrm($name, $phone, $description)

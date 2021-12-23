@@ -9,7 +9,7 @@ if ($_SESSION['converted'] === true) {
 
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Готово!</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/counter.css">
         <link rel="stylesheet" href="css/complete.css">
