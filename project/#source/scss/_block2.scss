@@ -8,12 +8,13 @@
 }
 .heading {
 	font-size: 48px;
+	font-weight: 500;
+	font-family: $ff1;
+	text-align: center;
 }
 .block2__heading {
 	width: 1200px;
 	margin: 60px auto;
-	text-align: center;
-	font-weight: 500;
 }
 .block2__slider-box {
 	//background-color: #000;

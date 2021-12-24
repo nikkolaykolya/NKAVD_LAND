@@ -1,0 +1,36 @@
+.tasks {
+	width: 100%;
+	font-family: $ff1;
+}
+.tasks__wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+.heading__tasks {
+	margin-top: 80px;
+	margin-bottom: 42px;
+}
+.tasks__box {
+	width: 1200px;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.tasks__block {
+	width: 351px;
+	height: 212px;
+	background: #ffffff;
+	border: 1px solid #ffd561;
+	box-sizing: border-box;
+	margin: 20px;
+	font-weight: 500;
+	font-size: 23px;
+	line-height: 29px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 35px;
+}

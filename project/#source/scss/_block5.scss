@@ -1,0 +1,32 @@
+.complexity {
+	width: 100%;
+	font-family: $ff1;
+}
+.complexity__wrapper {
+	width: 550px;
+	margin: 0 auto;
+}
+.heading__complexity {
+	margin-top: 60px;
+	margin-bottom: 27px;
+}
+
+.complexity__colomn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 19px 0;
+	p {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+		width: 480px;
+	}
+}
+.complexity__numder {
+	font-weight: 700;
+	font-size: 72px;
+	color: #ffd561;
+	width: 50px;
+	opacity: 0.5;
+}
