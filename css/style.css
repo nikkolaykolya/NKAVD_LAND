@@ -2609,6 +2609,10 @@ input._error {
 	transition: all 0.7s ease 0s;
 }
 
+.footer {
+	margin-top: -350px;
+}
+
 .footer__logo-img {
 	display: -webkit-box;
 	display: -ms-flexbox;

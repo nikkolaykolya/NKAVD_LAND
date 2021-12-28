@@ -91,8 +91,8 @@ VANTA.NET({
 	color: 0xFFD561,
 	backgroundColor: 0xFF000000,
 	points: 8.00,
-	maxDistance: 30.00,
-	spacing: 28.00
+	maxDistance: 34.00,
+	spacing: 29.00
 });
 
 function detectMobile() {

@@ -1,6 +1,7 @@
 .block7 {
 	width: 100%;
 	font-family: $ff1;
+	//margin-bottom: 430px;
 }
 .block7__wrapper {
 	width: 1650px;
@@ -12,7 +13,8 @@
 	justify-content: space-around;
 	align-items: center;
 	margin: 0 auto;
-	margin-top: 125px;
+	padding: 0.1px;
+	margin-top: 75px;
 }
 .block7__text {
 	width: 650px;
@@ -88,7 +90,7 @@ input._error {
 @media (max-width: 1920px) {
 	.block7__wrapper {
 		width: calc(650px + (1650 - 650) * ((100vw - 768px) / (1920 - 768)));
-		margin-top: calc(50px + (125 - 50) * ((100vw - 768px) / (1920 - 768)));
+		margin-top: calc(50px + (75 - 50) * ((100vw - 768px) / (1920 - 768)));
 	}
 	.block7__text {
 		width: calc(330px + (657 - 330) * ((100vw - 768px) / (1920 - 768)));
@@ -110,6 +112,9 @@ input._error {
 	.block7__form {
 		width: calc(350px + (657 - 350) * ((100vw - 768px) / (1920 - 768)));
 	}
+	.block7 {
+		//margin-bottom: calc(0px + (430 - 0) * ((100vw - 768px) / (1920 - 768)));
+	}
 }
 @media (max-width: 768px) {
 	.block7__wrapper {
@@ -117,7 +122,7 @@ input._error {
 		flex-direction: column;
 	}
 	.block7__text {
-		height: 150px;
+		height: calc(200px + (250 - 200) * ((100vw - 320px) / (768 - 320)));
 		display: flex;
 		flex-direction: column;
 		text-align: center;
@@ -129,10 +134,16 @@ input._error {
 		display: block;
 	}
 	.block7__text-quotes {
-		display: none;
+		//display: none;
+
+		font-size: calc(60px + (130 - 60) * ((100vw - 768px) / (1920 - 768)));
+		height: calc(80px + (130 - 80) * ((100vw - 768px) / (1920 - 768)));
+		span {
+			height: calc(25px + (70 - 25) * ((100vw - 320px) / (768 - 320)));
+		}
 	}
 	.block7__text-title {
-		display: none;
+		//display: none;
 	}
 	.block7__username,
 	.block7__numder,

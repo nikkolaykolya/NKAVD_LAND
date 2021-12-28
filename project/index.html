@@ -9,6 +9,7 @@
 
 	<!-- Подключение CSS -->
 	<link rel=" stylesheet" href="css/style.css">
+	<!-- 	<link rel=" stylesheet" href="../../css/style.css"> -->
 	<link rel=" stylesheet" href="../../css/complete.css">
 	<link rel=" stylesheet" href="../../css/counter.css">
 	<link rel="stylesheet" href="../../css/swiper-bundle.min.css" />
@@ -101,6 +102,7 @@
 			</div>
 		</div>
 	</header>
+
 	<figure class="figure_container">
 		<figure class="figure_first" data-rellax-speed="-7"></figure>
 		<figure class="figure_second" data-rellax-speed="-7"></figure>
@@ -121,19 +123,19 @@
 				<div class="block2__content-slider swiper-container">
 					<div class="block2__content-wrapper swiper-wrapper">
 						<div class="block2__content-box swiper-slide">
-							<img class="block6__box_img" src="../img/block2/slide1.webp"
+							<img class="block2__box_img" src="../img/block2/slide1.webp"
 								onerror="this.onerror=null; this.src='img/block2/slide1.png'">
 						</div>
 						<div class="block2__content-box swiper-slide">
-							<img class="block6__box_img" src="../img/block2/slide1.webp"
+							<img class="block2__box_img" src="../img/block2/slide1.webp"
 								onerror="this.onerror=null; this.src='img/block2/slide1.png'">
 						</div>
 						<div class="block2__content-box swiper-slide">
-							<img class="block6__box_img" src="../img/block2/slide1.webp"
+							<img class="block2__box_img" src="../img/block2/slide1.webp"
 								onerror="this.onerror=null; this.src='img/block2/slide1.png'">
 						</div>
 						<div class="block2__content-box swiper-slide">
-							<img class="block6__box_img" src="../img/block2/slide1.webp"
+							<img class="block2__box_img" src="../img/block2/slide1.webp"
 								onerror="this.onerror=null; this.src='img/block2/slide1.png'">
 						</div>
 					</div>
@@ -172,20 +174,24 @@
 				РЕЗУЛЬТАТЫ
 			</h2>
 			<div class="resalt__block-map">
-				<div class="resalt__box">
-					<div class="resalt__box_block">
-						<h5>Бюджет</h5>
-						<span>16000$</span>
+				<div class="resalt__block_left">
+					<div class="resalt__box">
+						<div class="resalt__box_block">
+							<h5>Бюджет</h5>
+							<span>16000$</span>
+						</div>
+					</div>
+					<div class="resalt__box">
+						<p>Создана актуальная и наглядная аналитика</p>
 					</div>
 				</div>
-				<div class="resalt__box">
-					<p>Создана актуальная и наглядная аналитика</p>
-				</div>
-				<div class="resalt__box">
-					<p>Повышение точности прогнозирования продаж на <br> 50%</p>
-				</div>
-				<div class="resalt__box">
-					<p>Открылась возможность сотрудникам работать удаленно</p>
+				<div class="resalt__block_right">
+					<div class="resalt__box">
+						<p>Повышение точности прогнозирования продаж на <br> 50%</p>
+					</div>
+					<div class="resalt__box">
+						<p>Открылась возможность сотрудникам работать удаленно</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -291,7 +297,7 @@
 	</div>
 
 	<div class="block6" id="portfolio">
-		<h2 class="heading">
+		<h2 class="heading heading__portfolio">
 			СМОТРЕТЬ ДРУГИЕ ПРОЕКТЫ
 		</h2>
 		<div class="block6__wrapper">
@@ -299,19 +305,38 @@
 				<img class="block6__box_img" src="../img/block6/BollBerry.webp"
 					onerror="this.onerror=null; this.src='../img/block6/BollBerry.png'">
 				<div class="block6__text">
-					<span>
-						BollBerry - разработка бренда под ключ. Фирменный стиль, брендбук, гайдлайн, корпоративный
-						сайт.
-					</span>
+					<a href="" class="block6__transition-top">
+						<div>
+							<img src="../img/block6/Info.svg" alt="" class="block6__transition-img">
+							<p>
+								Подробнее
+							</p>
+						</div>
+					</a>
+					<div class="block6__transition-bottom">
+						<span>
+							BollBerry - разработка бренда под ключ. Фирменный стиль, брендбук, гайдлайн, корпоративный сайт.
+						</span>
+					</div>
 				</div>
 			</div>
 			<div class="block6__box">
 				<img class="block6__box_img" src="../img/block6/War_Valley.webp"
 					onerror="this.onerror=null; this.src='../img/block6/War_Valley.png'">
 				<div class="block6__text">
-					<span>
-						War Valley - мобильная игра. Гейм-дизайн и проработка локаций, публикация игры под ключ.
-					</span>
+					<a href="" class="block6__transition-top">
+						<div>
+							<img src="../img/block6/Info.svg" alt="" class="block6__transition-img">
+							<p>
+								Подробнее
+							</p>
+						</div>
+					</a>
+					<div class="block6__transition-bottom">
+						<span>
+							War Valley - мобильная игра. Гейм-дизайн и проработка локаций, публикация игры под ключ.
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -346,7 +371,7 @@
 						<input placeholder="Опишите проект (не обязательно)" type="text" name="description" value="" />
 					</div>
 					<div class="block7__button" id="button">
-						<button class="block__button" type="submit" id="form">
+						<button id="button" class="block__button" type="submit" id="form">
 							<div class="block__button_desktop-text desktop">
 								<div id="circle"></div>
 								<span>

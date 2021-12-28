@@ -1,15 +1,18 @@
 .footer {
-	margin-top: 125px;
+	margin-top: 30px;
 	width: 100%;
+	padding: 0.1px;
+
 	font-family: $ff1;
 }
 .footer__wrapper {
 	width: 1920px;
-	height: 492px;
+	height: 450px;
 	background: #262626;
 	margin: 0 auto;
 	padding: 0.1px;
 }
+
 .footer__border-box {
 	width: 1890px;
 	height: 315px;
@@ -193,7 +196,7 @@
 	}
 	.footer__wrapper {
 		width: 100%;
-		height: calc(190px + (492 - 190) * ((100vw - 320px) / (1920 - 320)));
+		height: calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320)));
 	}
 	.footer__border-box {
 		width: calc(300px + (1890 - 300) * ((100vw - 320px) / (1920 - 320)));
@@ -272,6 +275,12 @@
 	.block__button_desktop-text {
 		width: calc(220px + (350 - 220) * ((100vw - 320px) / (1920 - 320)));
 	}
+	.block__button {
+		width: calc(290px + (660 - 290) * ((100vw - 320px) / (1920 - 320)));
+		height: calc(54px + (78 - 54) * ((100vw - 320px) / (1920 - 320)));
+		font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+		margin-top: calc(22px + (95 - 22) * ((100vw - 320px) / (1920 - 320)));
+	}
 }
 
 @media (max-width: 768px) {
@@ -290,4 +299,110 @@
 	.footer__center {
 		margin-left: calc(30px + (130 - 30) * ((100vw - 320px) / (768 - 320)));
 	}
+}
+@media (min-width: 768px) {
+	.header__link:hover {
+		color: #ffd561;
+	}
+	/*-------*/
+	#button {
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	#button span {
+		position: relative;
+		-webkit-transition: all 0.45s ease-Out;
+		transition: all 0.45s ease-Out;
+	}
+	#circle {
+		width: 0%;
+		height: 0%;
+		opacity: 0;
+		line-height: 40px;
+		border-radius: 100%;
+		background: #000;
+		position: absolute;
+		-webkit-transition: all 0.4s ease-Out;
+		transition: all 0.4s ease-Out;
+		top: 0%;
+		left: 0%;
+	}
+	#button:hover #circle {
+		width: 320%;
+		height: 600%;
+		opacity: 1;
+		top: -250px;
+		left: -250px;
+	}
+	#button:hover span {
+		color: #fff;
+	}
+}
+
+@media (min-width: 768px) {
+	.header__link:hover {
+		color: #ffd561;
+	}
+	/*-------*/
+	#button {
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	#button span {
+		position: relative;
+		-webkit-transition: all 0.45s ease-Out;
+		transition: all 0.45s ease-Out;
+	}
+	#circle {
+		width: 0%;
+		height: 0%;
+		opacity: 0;
+		line-height: 40px;
+		border-radius: 100%;
+		background: #000;
+		position: absolute;
+		-webkit-transition: all 0.4s ease-Out;
+		transition: all 0.4s ease-Out;
+		top: 0%;
+		left: 0%;
+	}
+
+	#button:hover #circle {
+		width: 290%;
+		height: 600%;
+		opacity: 1;
+		top: -250px;
+		left: -250px;
+	}
+	#button:hover span {
+		color: #fff;
+	}
+}
+.block__button {
+	background-color: #ffd561;
+	width: 660px;
+	height: 78px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0 auto;
+	margin-top: 95px;
+}
+.footer-button {
+	margin: 0px;
+	width: 100%;
 }

@@ -30,3 +30,20 @@
 	width: 50px;
 	opacity: 0.5;
 }
+@media (max-width: 570px) {
+	.complexity__wrapper {
+		width: calc(300px + (550 - 300) * ((100vw - 320px) / (570 - 320)));
+	}
+	.heading__complexity {
+		margin-top: calc(60px + (60 - 30) * ((100vw - 320px) / (570 - 320)));
+		margin-bottom: calc(15px + (27 - 15) * ((100vw - 320px) / (570 - 320)));
+	}
+
+	.complexity__colomn {
+		p {
+			font-size: calc(13px + (18 - 13) * ((100vw - 320px) / (570 - 320)));
+			line-height: calc(17px + (22 - 17) * ((100vw - 320px) / (570 - 320)));
+			width: calc(300px + (480 - 300) * ((100vw - 320px) / (570 - 320)));
+		}
+	}
+}

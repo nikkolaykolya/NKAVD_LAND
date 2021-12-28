@@ -18,3 +18,18 @@
 	margin-top: 50px;
 	margin-bottom: 30px;
 }
+@media (max-width: 800px) {
+	.solution__wrapper {
+		width: 90%;
+		max-width: 750px;
+		p {
+			font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (800 - 320)));
+			line-height: calc(17px + (29 - 17) * ((100vw - 320px) / (800 - 320)));
+		}
+	}
+
+	.heading__solution {
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
+}

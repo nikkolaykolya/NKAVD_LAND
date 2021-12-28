@@ -3,10 +3,36 @@
 	font-family: $ff1;
 }
 .realization__wrapper {
-	width: 780px;
+	width: 750px;
 	margin: 0 auto;
 }
 .heading__realization {
+	margin-top: 68px;
+	margin-bottom: 30px;
 }
 .realization__box {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: justify;
+	height: 363px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (max-width: 750px) {
+	.realization__wrapper {
+		width: calc(300px + (750 - 300) * ((100vw - 320px) / (750 - 320)));
+	}
+	.heading__realization {
+		margin-top: calc(50px + (68 - 50) * ((100vw - 320px) / (750 - 320)));
+		margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (750 - 320)));
+	}
+	.realization__box {
+		font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (750 - 320)));
+		line-height: calc(17px + (29 - 17) * ((100vw - 320px) / (750 - 320)));
+		height: calc(280px + (363 - 280) * ((100vw - 320px) / (750 - 320)));
+	}
 }
