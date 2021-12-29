@@ -2492,7 +2492,7 @@ input._error {
 /*Импорт блока 9*/
 /*Импорт блока 10*/
 /*------Импорт Подвала------*/
-.footer {
+div.footer {
 	margin-top: -350px;
 	width: 100%;
 	font-family: Montserrat;
