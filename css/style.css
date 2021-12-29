@@ -2232,12 +2232,6 @@ a[x-apple-data-detectors] {
 	height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320)));
 }
 
-/* .block6__box:hover {
-	 .block6__text {
-		 height: 100%;
-		 transition: all 0.7s ease 0s;
-	 }
- } */
 .block6__box {
 	margin: 10px 0;
 }
