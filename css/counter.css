@@ -447,7 +447,7 @@ body._lock .header__body:before {
 }
 
 .footer {
-	margin-top: -350px;
+	margin-top: calc(-240px + (0 + -240) * ((100vw - 768px) / (1920 - 768)));
 }
 
 .block1__background {
