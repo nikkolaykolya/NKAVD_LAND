@@ -79,7 +79,21 @@ VANTA.NET({
 	maxDistance: 22.00,
 	spacing: 20.00
 });
-
+VANTA.NET({
+	el: "#Visual2",
+	mouseControls: true,
+	touchControls: true,
+	gyroControls: false,
+	minHeight: 200.00,
+	minWidth: 200.00,
+	scale: 1.00,
+	scaleMobile: 1.00,
+	color: 0xFFD561,
+	backgroundColor: 0xFF000000,
+	points: 8.00,
+	maxDistance: 30.00,
+	spacing: 30.00
+});
 function detectMobile() {
 	var match = window.matchMedia || window.msMatchMedia;
 	if (match) {
@@ -200,7 +214,35 @@ new Swiper('.block1__content-slider_mobile', {
 		}
 	}
 });
-
+new Swiper('.block2__content-slider', {
+	slidesPerView: 1,
+	slidesPerGroup: 1,
+	effect: "coverflow",
+	spaceBetween: 30,
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: "auto",
+	loop: true,
+	coverflowEffect: {
+		rotate: 50,
+		stretch: 0,
+		depth: 100,
+		modifier: 1,
+		slideShadows: false,
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	autoplay: {
+		delay: 4000,
+		disableOnInteraction: false,
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+});
 // Переход
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
