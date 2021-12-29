@@ -91,8 +91,8 @@ VANTA.NET({
 	color: 0xFFD561,
 	backgroundColor: 0xFF000000,
 	points: 8.00,
-	maxDistance: 34.00,
-	spacing: 29.00
+	maxDistance: 30.00,
+	spacing: 30.00
 });
 
 function detectMobile() {
@@ -243,40 +243,6 @@ new Swiper('.block2__content-slider', {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
-
-
-	/* 	slidesPerView: 1,
-		centeredSlides: true,
-		spaceBetween: 30,
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-			autoplay: {
-				delay: 8000,
-				disableOnInteraction: false,
-			},
-		loop: true,
-		slidesPerGroup: 1,
-		freeMode: false, */
-	/* 	breakpoints: {
-			450: {
-				slidesPerView: 2.2,
-				spaceBetween: 60,
-			},
-			380: {
-				slidesPerView: 2,
-				spaceBetween: 50,
-			},
-			350: {
-				slidesPerView: 1.75,
-				spaceBetween: 40,
-			},
-			100: {
-				slidesPerView: 1.5,
-				spaceBetween: 30,
-			}
-		} */
 });
 // Переход
 const smoothLinks = document.querySelectorAll('a[href^="#"]');

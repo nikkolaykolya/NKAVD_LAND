@@ -93,3 +93,16 @@
 
 	//width: calc(660px + (1305 - 660) * ((100vw - 768px) / (1920 - 768)));
 }
+
+@media (max-width: 768px) {
+	.swiper-button-next::after,
+	.swiper-button-prev::after {
+		display: none;
+		pointer-events: none;
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
+		pointer-events: none;
+	}
+}

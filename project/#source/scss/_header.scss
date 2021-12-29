@@ -62,7 +62,7 @@
 }
 .header__list {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	max-width: 760px;
 	width: 760px;
 }
@@ -71,6 +71,7 @@
 	color: #fff;
 	font-weight: 700;
 	font-size: 18px;
+	margin-left: 40px;
 }
 .header__phone-question {
 	display: flex;
@@ -371,6 +372,7 @@
 	.header__link {
 		font-size: 24px;
 		color: #000;
+		margin-left: 0px;
 	}
 	.header__body {
 		display: flex;

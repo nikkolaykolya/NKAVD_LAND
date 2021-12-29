@@ -24,7 +24,7 @@
 
 @media (max-width: 750px) {
 	.realization__wrapper {
-		width: calc(300px + (750 - 300) * ((100vw - 320px) / (750 - 320)));
+		width: calc(260px + (700 - 260) * ((100vw - 320px) / (750 - 320)));
 	}
 	.heading__realization {
 		margin-top: calc(50px + (68 - 50) * ((100vw - 320px) / (750 - 320)));

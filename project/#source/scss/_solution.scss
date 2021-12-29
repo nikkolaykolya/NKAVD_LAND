@@ -11,20 +11,24 @@
 		font-size: 24px;
 		line-height: 29px;
 		text-align: justify;
+		margin: 0 auto;
 	}
 }
 
 .heading__solution {
+	//width: 100%;
+	margin: 0 auto;
 	margin-top: 50px;
 	margin-bottom: 30px;
 }
-@media (max-width: 800px) {
+@media (max-width: 750px) {
 	.solution__wrapper {
-		width: 90%;
-		max-width: 750px;
+		width: 100vw;
+
 		p {
 			font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (800 - 320)));
 			line-height: calc(17px + (29 - 17) * ((100vw - 320px) / (800 - 320)));
+			width: calc(260px + (750 - 260) * ((100vw - 320px) / (800 - 320)));
 		}
 	}
 
