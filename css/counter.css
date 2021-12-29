@@ -492,3 +492,6 @@ body._lock .header__body:before {
 		margin-top: 30px;
 	}
 }
+.figure_container .figure_fifth {
+	display: none;
+}
