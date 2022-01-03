@@ -1,15 +1,14 @@
 <?php
 session_start();
-if ($_SESSION['converted'] === true) {
+if ($_SESSION['converted'] && !$_SESSION['lead_generated']) {
+    $_SESSION['lead_generated'] = true;
     ?>
-
     <!DOCTYPE html>
-
     <html lang="ru" dir="ltr">
 
     <head>
         <meta charset="utf-8">
-        <title>Готово!</title>
+        <title></title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/counter.css">
         <link rel="stylesheet" href="css/complete.css">
@@ -31,6 +30,8 @@ if ($_SESSION['converted'] === true) {
             })(window, document, 'script', 'dataLayer', 'GTM-T2NDN39');
         </script> -->
         <!-- End Google Tag Manager -->
+
+        <!-- Hotjar Tracking Code for https://nkavd.com/ -->
         <!-- <script>
             (function (h, o, t, j, a, r) {
                 h.hj = h.hj || function () {
@@ -44,8 +45,6 @@ if ($_SESSION['converted'] === true) {
                 a.appendChild(r);
             })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
         </script> -->
-
-
         <!-- Facebook Pixel Code -->
         <!-- <script>
             !function (f, b, e, v, n, t, s) {
@@ -133,10 +132,49 @@ if ($_SESSION['converted'] === true) {
     <!-- End Google Tag Manager (noscript) -->
 
     </html>
+    <?php
+} else {
+    ?>
 
+    <!DOCTYPE html>
+    <html lang="ru" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/counter.css">
+        <link rel="stylesheet" href="css/complete.css">
+    </head>
+    <body>
+    <div class="form_result" id="form_result">
+        <div class="circle-loader" id="circleLoader">
+            <div class="checkmark draw" id="checkmark"></div>
+        </div>
+        <p>Ваша заявка уже принята. Наш менеджер свяжется с вами в скором времени.</p>
+        <p id="form_result_text"></p>
+        <button class="block__button" id="button" onclick="history.back()">
+            <div class=" block__button_desktop-text">
+                <div id="circle"></div>
+                <span>
+                    На главную
+                </span>
+            </div>
+            <div class="block__button_mobile-text">
+                <div id="circle"></div>
+                <span>
+                    На главную
+                </span>
+            </div>
+        </button>
+    </div>
+    <figure>
+        <div class="left_complete"></div>
+        <div class="right_complete"></div>
+    </figure>
+    </body>
+    </html>
 
     <?php
 }
-
-session_destroy();
 ?>
