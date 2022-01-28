@@ -325,6 +325,16 @@ a[x-apple-data-detectors] {
 	line-height: inherit !important;
 }
 
+html::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	top: -1000px;
+	left: 0;
+	height: 1000px;
+	background: rgba(000, 000, 000, 1);
+}
+
 /*--------------------*/
 /*Импорт шрифты*/
 /*-------------------Montserrat-------------------*/
@@ -351,16 +361,6 @@ a[x-apple-data-detectors] {
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	z-index: 1;
-}
-
-.header::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	top: -1000px;
-	left: 0;
-	height: 1000px;
-	background: black;
 }
 
 .header__wrapper {
