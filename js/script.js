@@ -267,14 +267,14 @@ let popappForm = document.getElementById('popapp_form');
 let dropdown_shadow = document.getElementById("shadow");
 for (var i = 0; i < callPopapp.length; i++) {
 	callPopapp[i].addEventListener('click', function (e) {
-		popappForm.classList.add('popapp_to_button-active');
-		dropdown_shadow.classList.add('shadow');
+		popappForm.classList.toggle('popapp_to_button-active');
+		dropdown_shadow.classList.toggle('shadow');
 		body.style.overflow = "hidden";
 	})
 };
 function hideCountriesDropdown() {
-	dropdown_shadow.classList.remove('shadow');
+	dropdown_shadow.classList.toggle('shadow');
 	body.style.overflow = "";
-	popappForm.classList.remove('popapp_to_button-active');
+	popappForm.classList.toggle('popapp_to_button-active');
 }
 dropdown_shadow.addEventListener("click", e => hideCountriesDropdown());

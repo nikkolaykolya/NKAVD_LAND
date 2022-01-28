@@ -353,6 +353,16 @@ a[x-apple-data-detectors] {
 	z-index: 1;
 }
 
+.header::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	top: -1000px;
+	left: 0;
+	height: 1000px;
+	background: black;
+}
+
 .header__wrapper {
 	position: relative;
 	z-index: 2;
@@ -1813,19 +1823,16 @@ a[x-apple-data-detectors] {
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-}
-
-.popapp_to_button p {
 	font-size: 16px;
 	font-family: Montserrat;
 	font-weight: 500;
-	padding: 0 40px;
 	margin: 20px auto 30px;
 	text-align: center;
 }
 
 .popapp_to_button .popapp__form {
 	width: 100%;
+	height: 330px;
 	padding: 0 40px;
 }
 
@@ -1849,27 +1856,11 @@ a[x-apple-data-detectors] {
 }
 
 .popapp_to_button .block7__text {
-	min-height: 80px;
-	max-height: 150px;
+	height: auto;
 	height: 100%;
 	width: 100%;
 	padding: 0 40px;
-	margin-bottom: 20px;
-}
-
-.popapp_to_button .block7__text .block7__text-title {
-	display: block;
-	font-size: 40px;
-}
-
-.popapp_to_button .block7__text .block7__text-quotes {
-	font-size: 80px;
-	height: auto;
-	display: block;
-}
-
-.popapp_to_button .block7__text .block7__text-subtitle {
-	font-size: 20px;
+	margin: 20px 0;
 }
 
 .shadow {
@@ -1881,27 +1872,16 @@ a[x-apple-data-detectors] {
 	top: 0;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 420px) {
 	.popapp_to_button {
 		max-width: 95vw;
 	}
 	.popapp_to_button .block7__text {
-		min-height: 70px;
-		max-height: 100px;
+		height: auto;
 		height: 100%;
 		width: 100%;
-		padding: 0 30px;
+		padding: 0 10px;
 		margin: 20px 0;
-	}
-	.popapp_to_button .block7__text .block7__text-title {
-		display: block;
-		font-size: 30px;
-	}
-	.popapp_to_button .block7__text .block7__text-quotes {
-		font-size: 70px;
-	}
-	.popapp_to_button .block7__text .block7__text-subtitle {
-		font-size: 18px;
 	}
 }
 
