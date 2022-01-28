@@ -1202,6 +1202,117 @@ convas.vanta-canvas {
 	}
 }
 
+/*Импорт попапа 3*/
+.popapp_to_button {
+	max-width: 400px;
+	width: 100%;
+	background: white;
+	border: 3px solid #ffd561;
+	position: fixed;
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.popapp_to_button p {
+	font-size: 16px;
+	font-family: Montserrat;
+	font-weight: 500;
+	padding: 0 40px;
+	margin: 20px auto 30px;
+	text-align: center;
+}
+
+.popapp_to_button .popapp__form {
+	width: 100%;
+	padding: 0 40px;
+}
+
+.popapp_to_button .popapp__button {
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.popapp_to_button .popapp__button .block__button {
+	width: 100%;
+	margin-top: 0;
+}
+
+.popapp_to_button .popapp__button .block__button .block__button_desktop-text {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.popapp_to_button .block7__text {
+	min-height: 80px;
+	max-height: 150px;
+	height: 100%;
+	width: 100%;
+	padding: 0 40px;
+	margin-bottom: 20px;
+}
+
+.popapp_to_button .block7__text .block7__text-title {
+	display: block;
+	font-size: 40px;
+}
+
+.popapp_to_button .block7__text .block7__text-quotes {
+	font-size: 80px;
+	height: auto;
+	display: block;
+}
+
+.popapp_to_button .block7__text .block7__text-subtitle {
+	font-size: 20px;
+}
+
+.shadow {
+	background: rgba(0, 0, 0, 0.34);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+}
+
+@media (max-width: 550px) {
+	.popapp_to_button {
+		max-width: 95vw;
+	}
+	.popapp_to_button .block7__text {
+		min-height: 70px;
+		max-height: 100px;
+		height: 100%;
+		width: 100%;
+		padding: 0 30px;
+		margin: 20px 0;
+	}
+	.popapp_to_button .block7__text .block7__text-title {
+		display: block;
+		font-size: 30px;
+	}
+	.popapp_to_button .block7__text .block7__text-quotes {
+		font-size: 70px;
+	}
+	.popapp_to_button .block7__text .block7__text-subtitle {
+		font-size: 18px;
+	}
+}
+
+.popapp_to_button-active {
+	opacity: 1;
+	visibility: visible;
+}
+
 /*Импорт блока 4*/
 .tasks {
 	width: 100%;

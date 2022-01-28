@@ -262,3 +262,19 @@ for (let smoothLink of smoothLinks) {
 		};
 	});
 };
+let callPopapp = document.getElementsByClassName('popappButton');
+let popappForm = document.getElementById('popapp_form');
+let dropdown_shadow = document.getElementById("shadow");
+for (var i = 0; i < callPopapp.length; i++) {
+	callPopapp[i].addEventListener('click', function (e) {
+		popappForm.classList.add('popapp_to_button-active');
+		dropdown_shadow.classList.add('shadow');
+		body.style.overflow = "hidden";
+	})
+};
+function hideCountriesDropdown() {
+	dropdown_shadow.classList.remove('shadow');
+	body.style.overflow = "";
+	popappForm.classList.remove('popapp_to_button-active');
+}
+dropdown_shadow.addEventListener("click", e => hideCountriesDropdown());
