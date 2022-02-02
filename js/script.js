@@ -94,16 +94,17 @@ VANTA.NET({
 	maxDistance: 30.00,
 	spacing: 30.00
 });
+
 function detectMobile() {
-	var match = window.matchMedia || window.msMatchMedia;
+	let match = window.matchMedia || window.msMatchMedia;
 	if (match) {
-		var mq = match("(pointer:coarse)");
+		let mq = match("(pointer:coarse)");
 		return mq.matches;
 	}
 	return false;
 }
 
-var isMobile = detectMobile();
+let isMobile = detectMobile();
 
 
 //Меню бургер
@@ -129,35 +130,33 @@ if (burgerMenu) {
 	});
 }
 
-//Переворот
-var header = document.getElementById("advantageContainer");
-var btns = document.getElementsByClassName("advantage__box");
-var flipCards = document.getElementsByClassName("flip-card");
+let advantageBoxes = document.getElementsByClassName("advantage__box");
+let flipCards = document.getElementsByClassName("flip-card");
 
 function anyPriceListCardFlipped() {
-	for (var j = 0; j < flipCards.length; j++)
-		if (flipCards[j].dataset.active == "active")
+	for (let j = 0; j < flipCards.length; j++)
+		if (flipCards[j].dataset.active === "active")
 			return true;
 	return false;
 }
 
 
 function anyAdvantageCardFlipped() {
-	for (var j = 0; j < btns.length; j++)
-		if (btns[j].dataset.active == "active")
+	for (let j = 0; j < advantageBoxes.length; j++)
+		if (advantageBoxes[j].dataset.active === "active")
 			return true;
 	return false;
 }
 
 document.querySelector('body').addEventListener(isMobile ? 'touchstart' : 'click', function (event) {
 	if (anyAdvantageCardFlipped()) {
-		for (var j = 0; j < btns.length; j++)
-			if (event.target != btns[j])
-				btns[j].dataset.active = "inactive";
+		for (let j = 0; j < advantageBoxes.length; j++)
+			if (event.target !== advantageBoxes[j])
+				advantageBoxes[j].dataset.active = "inactive";
 	}
 
 	if (event.target.classList.contains('advantage__box')) {
-		event.target.dataset.active = event.target.dataset.active == "active" ? "inactive" : "active";
+		event.target.dataset.active = event.target.dataset.active === "active" ? "inactive" : "active";
 	}
 });
 
@@ -166,17 +165,15 @@ if (isMobile)
 		if (isMobile) {
 			if (anyPriceListCardFlipped()) {
 				for (var j = 0; j < flipCards.length; j++)
-					if (event.target != flipCards[j])
+					if (event.target !== flipCards[j])
 						flipCards[j].dataset.active = "inactive";
 			}
 
 			if (event.target.classList.contains('flip-card')) {
-				event.target.dataset.active = event.target.dataset.active == "active" ? "inactive" : "active";
+				event.target.dataset.active = event.target.dataset.active === "active" ? "inactive" : "active";
 			}
 		}
 	});
-
-
 
 
 // Инициализируем Swiper
@@ -243,7 +240,7 @@ new Swiper('.block2__content-slider', {
 		prevEl: ".swiper-button-prev",
 	},
 });
-// Переход
+
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
 	smoothLink.addEventListener('click', function (e) {
@@ -251,7 +248,7 @@ for (let smoothLink of smoothLinks) {
 		const od = smoothLink.getAttribute('href').replace('#', '');
 		const pxTop = '150';
 		const blockOffset = document.getElementById(od).getBoundingClientRect().top + window.pageYOffset - pxTop;
-		window.scrollTo({ top: blockOffset, behavior: 'smooth' });
+		window.scrollTo({top: blockOffset, behavior: 'smooth'});
 		console.log(window.pageYOffset);
 		if (burgerMenu.classList.contains('_active')) {
 			burgerMenu.classList.toggle('_active');
@@ -259,6 +256,25 @@ for (let smoothLink of smoothLinks) {
 			headerLogoWhite.classList.toggle('_active');
 			headerLogoDark.classList.toggle('_active');
 			body.classList.toggle('_lock');
-		};
+		}
 	});
-};
+}
+
+let popupRevealButtons = document.getElementsByClassName('popupButton');
+let popupForm = document.getElementById('popupForm');
+let popupShadow = document.getElementById("shadow");
+for (let i = 0; i < popupRevealButtons.length; i++) {
+	popupRevealButtons[i].addEventListener('click', function (e) {
+		popupForm.classList.toggle('popapp_to_button-active');
+		popupShadow.classList.toggle('shadow');
+		body.style.overflow = "hidden";
+	})
+}
+
+function hideCountriesDropdown() {
+	popupShadow.classList.toggle('shadow');
+	body.style.overflow = "";
+	popupForm.classList.toggle('popapp_to_button-active');
+}
+
+popupShadow.addEventListener("click", e => hideCountriesDropdown());
