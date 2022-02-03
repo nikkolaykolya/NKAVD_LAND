@@ -79,21 +79,21 @@ VANTA.NET({
 	maxDistance: 22.00,
 	spacing: 20.00
 });
-VANTA.NET({
-	el: "#Visual2",
-	mouseControls: true,
-	touchControls: true,
-	gyroControls: false,
-	minHeight: 200.00,
-	minWidth: 200.00,
-	scale: 1.00,
-	scaleMobile: 1.00,
-	color: 0xFFD561,
-	backgroundColor: 0xFF000000,
-	points: 8.00,
-	maxDistance: 30.00,
-	spacing: 30.00
-});
+// VANTA.NET({
+// 	el: "#Visual2",
+// 	mouseControls: true,
+// 	touchControls: true,
+// 	gyroControls: false,
+// 	minHeight: 200.00,
+// 	minWidth: 200.00,
+// 	scale: 1.00,
+// 	scaleMobile: 1.00,
+// 	color: 0xFFD561,
+// 	backgroundColor: 0xFF000000,
+// 	points: 8.00,
+// 	maxDistance: 30.00,
+// 	spacing: 30.00
+// });
 
 function detectMobile() {
 	let match = window.matchMedia || window.msMatchMedia;
