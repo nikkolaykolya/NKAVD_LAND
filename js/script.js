@@ -265,7 +265,7 @@ let popupForm = document.getElementById('popupForm');
 let popupShadow = document.getElementById("shadow");
 for (let i = 0; i < popupRevealButtons.length; i++) {
 	popupRevealButtons[i].addEventListener('click', function (e) {
-		popupForm.classList.toggle('popapp_to_button-active');
+		popupForm.classList.toggle('popup_to_button-active');
 		popupShadow.classList.toggle('shadow');
 		body.style.overflow = "hidden";
 	})
@@ -274,7 +274,7 @@ for (let i = 0; i < popupRevealButtons.length; i++) {
 function hideCountriesDropdown() {
 	popupShadow.classList.toggle('shadow');
 	body.style.overflow = "";
-	popupForm.classList.toggle('popapp_to_button-active');
+	popupForm.classList.toggle('popup_to_button-active');
 }
 
 popupShadow.addEventListener("click", e => hideCountriesDropdown());
